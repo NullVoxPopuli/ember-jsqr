@@ -19,6 +19,8 @@ Installation
 ember install ember-jsqr
 ```
 
+NOTE: this is supes beta
+
 
 Usage
 ------------------------------------------------------------------------------

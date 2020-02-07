@@ -1,1 +1,6 @@
-{{yield}}
+<canvas
+  {{attach-video @cameraStream this.onPlay}}
+  {{attach-qr-scanner this.video onData=@onData}}
+  ...attributes
+>
+</canvas>

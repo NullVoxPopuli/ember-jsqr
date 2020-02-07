@@ -4,7 +4,12 @@ import jsQR from 'jsqr';
 type Point = import('jsqr/dist/locator').Point;
 type QRCode = import('jsqr').QRCode;
 
-export default class AttachQrScannerModifier extends Modifier {
+type Args = {
+  positional: [HTMLVideoElement];
+  named: { onData: <T>(data: string) => T };
+}
+
+export default class AttachQrScannerModifier extends Modifier<Args> {
   element!: HTMLCanvasElement;
   canvas?: CanvasRenderingContext2D | null;
   _tick: FrameRequestCallback = () => {};

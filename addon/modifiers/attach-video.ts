@@ -1,14 +1,19 @@
 import Modifier from 'ember-modifier';
 
-export default class AttachVideoModifier extends Modifier {
+type Args = {
+  positional: [MediaStream, <T>(video: HTMLVideoElement) => T];
+  named: {};
+}
+
+export default class AttachVideoModifier extends Modifier<Args> {
   video?: HTMLVideoElement;
 
   get videoStream() {
-    return this.args?.positional[0];
+    return this.args.positional[0];
   }
 
   get onPlay() {
-    return this.args?.positional[1];
+    return this.args.positional[1];
   }
 
   didReceiveArguments() {

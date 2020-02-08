@@ -9,13 +9,9 @@ export default class AppController extends Controller {
   @action
   startCamera() {
     // Use facingMode: environment to attemt to get the front camera on phones
-    navigator
-      .mediaDevices
-      .getUserMedia({ video: { facingMode: 'environment' } })
-      .then(stream => {
-        this.cameraStream = stream;
-      })
-
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } }).then(stream => {
+      this.cameraStream = stream;
+    });
   }
 
   @action

@@ -1,0 +1,56 @@
+name: Tests
+on:
+  pull_request: {}
+  push:
+    branches:
+      - master
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - name: Install
+      run: yarn install
+    - name: ESLint
+      run: yarn lint:js
+    - name: Types
+      run: yarn tsc --noEmit
+
+  tests_floating:
+    name: Floating
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - name: Install
+      run: yarn install --no-lockfile --non-interactive
+    - name: Test
+      run: yarn test
+
+  tests_ember_compat:
+    name: Ember Compatability
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        scenario:
+        - "ember-3.13"
+        - "ember-release"
+        - "ember-beta"
+        - "ember-canary"
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - name: Install
+      run: yarn install
+    - name: Test with ${{ matrix.scenario }}
+      run: yarn test:try-one ${{ matrix.scenario }}
+

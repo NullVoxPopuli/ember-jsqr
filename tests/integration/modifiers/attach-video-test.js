@@ -8,7 +8,7 @@ module('Integration | Modifier | attach-video', function(hooks) {
 
   // Replace this with your real tests.
   test('it renders', async function(assert) {
-    await render(hbs`<div {{attach-video}}></div>`);
+    await render(hbs`<canvas {{attach-video}}></canvas>`);
 
     assert.ok(true);
   });

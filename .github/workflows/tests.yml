@@ -71,6 +71,8 @@ jobs:
       - name: Set ENV
         # 'master' or 'v1.2.3'
         run: echo "::set-env name=ADDON_DOCS_VERSION_PATH::${GITHUB_REF##*/}"
+      - name: Install
+        run: yarn install
       - name: Deploy
         env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}

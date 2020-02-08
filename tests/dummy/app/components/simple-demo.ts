@@ -6,13 +6,14 @@ export default class SimpleDemo extends Component {
   @tracked cameraStream?: MediaStream;
   @tracked lastDetectedData?: string;
 
+  get isCameraActive() {
+    return this.cameraStream !== undefined;
+  }
+
+  // BEGIN-SNIPPET simple-demo-scanner.ts
   @action
   async toggleCamera() {
-    if (!this.cameraStream) {
-      return await this.start();
-    }
-
-    this.stop();
+    this.isCameraActive ? this.stop() : await this.start();
   }
 
   @action
@@ -21,7 +22,6 @@ export default class SimpleDemo extends Component {
   }
 
   private async start() {
-    // Use facingMode: environment to attemt to get the front camera on phones
     let options = { video: { facingMode: 'environment' } };
     let stream = await navigator.mediaDevices.getUserMedia(options);
 
@@ -31,4 +31,5 @@ export default class SimpleDemo extends Component {
   private stop() {
     this.cameraStream = undefined;
   }
+  // END-SNIPPET
 }

@@ -1,6 +1,10 @@
 <canvas
   {{attach-video @cameraStream this.onPlay}}
-  {{attach-qr-scanner this.video onData=@onData}}
+  {{attach-qr-scanner
+    this.video
+    onData=@onData
+    highlightColor=@highlightColor
+  }}
   ...attributes
 >
 </canvas>

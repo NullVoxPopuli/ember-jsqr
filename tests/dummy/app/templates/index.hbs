@@ -1,18 +1,26 @@
 <DocsHero />
 
-<p>
- ember-jsqr is a small addon that implements a specific use case for
- integrating with jsqr. It assumes:
- <ul>
-   <li>you want visual indication of when a QR Code is detected</li>
-   <li>you want to be in control of selecting the camera</li>
-   <li>you want to be in control of when to start / stop scanning</li>
- </ul>
-</p>
-<div style="max-width: 40rem; margin: 0 auto; padding: 0 1.5rem">
-  <DocsDemo as |demo|>
-    <demo.example @name='my-demo.hbs'>
-      <p>Make sure to read up on the DocsDemo component before building out this page.</p>
-    </demo.example>
-  </DocsDemo>
+
+<div class="docs-container docs-md">
+  <section class="docs-max-w-md docs-mx-auto docs-pb-8">
+
+    <p>
+      ember-jsqr is a small addon that implements a specific use case for
+      integrating with jsqr. It assumes:
+      <ul>
+        <li>you want visual indication of when a QR Code is detected</li>
+        <li>you want to be in control of selecting the camera</li>
+        <li>you want to be in control of when to start / stop scanning</li>
+      </ul>
+    </p>
+
+    <div class="docs-my-16 docs-text-right">
+      {{#link-to
+        "docs"
+        class="docs-bg-grey-darkest hover:docs-bg-black docs-text-white docs-py-2 docs-px-4 docs-no-underline docs-rounded"
+      }}
+        Read the docs →
+      {{/link-to}}
+    </div>
+  </section>
 </div>

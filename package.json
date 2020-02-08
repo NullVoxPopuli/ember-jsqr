@@ -77,11 +77,13 @@
   "engines": {
     "node": "8.* || >= 10.*"
   },
-  "ember": {
-    "edition": "octane"
-  },
+  "ember": {},
   "ember-addon": {
     "configPath": "tests/dummy/config"
   },
-  "homepage": "https://NullVoxPopuli.github.io/ember-jsqr"
+  "homepage": "https://NullVoxPopuli.github.io/ember-jsqr",
+  "volta": {
+    "node": "12.15.0",
+    "yarn": "1.22.0"
+  }
 }

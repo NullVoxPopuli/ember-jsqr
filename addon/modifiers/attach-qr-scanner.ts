@@ -6,8 +6,13 @@ type QRCode = import('jsqr').QRCode;
 
 type Args = {
   positional: [HTMLVideoElement];
-  named: { onData: <T>(data: string) => T };
+  named: {
+    onData: <T>(data: string) => T;
+    highlightColor?: string;
+  };
 }
+
+const DEFAULT_COLOR = '#FF3B58';
 
 export default class AttachQrScannerModifier extends Modifier<Args> {
   element!: HTMLCanvasElement;
@@ -20,6 +25,10 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
 
   get onData() {
     return this.args?.named.onData;
+  }
+
+  get color() {
+    return this.args?.named.highlightColor || DEFAULT_COLOR;
   }
 
   didInstall() {
@@ -37,25 +46,6 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
     requestAnimationFrame(this._tick);
   }
 
-  drawLine(begin: Point, end: Point, color: string) {
-    if (!this.canvas) return;
-
-    this.canvas.beginPath();
-    this.canvas.moveTo(begin.x, begin.y);
-    this.canvas.lineTo(end.x, end.y);
-    this.canvas.lineWidth = 4;
-    this.canvas.strokeStyle = color;
-    this.canvas.stroke();
-  }
-
-  drawBox(location: QRCode['location'], color: string) {
-    this.drawLine(location.topLeftCorner, location.topRightCorner, color);
-    this.drawLine(location.topRightCorner, location.bottomRightCorner, color);
-    this.drawLine(location.bottomRightCorner, location.bottomLeftCorner, color);
-    this.drawLine(location.bottomLeftCorner, location.topLeftCorner, color);
-  }
-
-
   tick() {
     if (!this.video || !this.canvas) return;
 
@@ -72,7 +62,11 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
         });
 
         if (code) {
-          this.drawBox(code.location, '#FF3B58');
+          drawBox({
+            canvas: this.canvas,
+            location: code.location,
+            color: this.color
+          });
 
           this.onData(code.data);
         }
@@ -80,4 +74,29 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
 
       requestAnimationFrame(this._tick);
   }
+}
+
+
+function drawBox({
+  canvas,
+  location,
+  color,
+}: {
+  canvas: CanvasRenderingContext2D,
+  location: QRCode['location'],
+  color: string,
+}) {
+  drawLine(canvas, location.topLeftCorner, location.topRightCorner, color);
+  drawLine(canvas, location.topRightCorner, location.bottomRightCorner, color);
+  drawLine(canvas, location.bottomRightCorner, location.bottomLeftCorner, color);
+  drawLine(canvas, location.bottomLeftCorner, location.topLeftCorner, color);
+}
+
+function drawLine(canvas: CanvasRenderingContext2D, begin: Point, end: Point, color: string) {
+  canvas.beginPath();
+  canvas.moveTo(begin.x, begin.y);
+  canvas.lineTo(end.x, end.y);
+  canvas.lineWidth = 4;
+  canvas.strokeStyle = color;
+  canvas.stroke();
 }

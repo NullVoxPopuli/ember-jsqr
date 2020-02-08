@@ -1,9 +1,16 @@
-name: Tests
+name: CI
+
+# Inspiration: https://github.com/alexdiliberto/ember-transformicons/blob/master/.github/workflows/ci.yml
 on:
-  pull_request: {}
+  pull_request:
   push:
+    # filtering branches here prevents duplicate builds from pull_request and push
     branches:
       - master
+      - 'v*'
+    # always run CI for tags
+    tags:
+      - '*'
 
 jobs:
   lint:
@@ -11,9 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
+    - uses: rwjblue/setup-volta@v1
     - name: Install
       run: yarn install
     - name: ESLint
@@ -26,9 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
+    - uses: rwjblue/setup-volta@v1
     - name: Install
       run: yarn install --no-lockfile --non-interactive
     - name: Test
@@ -46,11 +49,27 @@ jobs:
         - "ember-canary"
     steps:
     - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
+    - uses: rwjblue/setup-volta@v1
     - name: Install
       run: yarn install
     - name: Test with ${{ matrix.scenario }}
       run: yarn test:try-one ${{ matrix.scenario }}
-
+      #
+  # https://github.com/ember-learn/ember-cli-addon-docs/issues/437
+  deploy-prod:
+    name: Production Deploy
+    runs-on: ubuntu-latest
+    needs: [tests_ember_compat, tests_floating]
+    # if: (branch = master OR tag IS present) AND type = push
+    # if: success() && github.ref == 'refs/heads/master' && github.event_name == 'push'
+    if: success() && github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v1
+      - uses: rwjblue/setup-volta@v1
+      - name: Set ENV
+        # 'master' or 'v1.2.3'
+        run: echo "::set-env name=ADDON_DOCS_VERSION_PATH::${GITHUB_REF##*/}"
+      - name: Deploy
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        run: yarn ember deploy production

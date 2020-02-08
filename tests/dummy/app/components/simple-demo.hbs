@@ -1,8 +1,15 @@
-<button type='button' {{on 'click' this.toggleCamera}}>
-  {{#if this.cameraStream}}
-    Start Camera
-  {{else}}
+<button
+  type='button'
+  class='bg-blue-500 hover:bg-blue-400
+         text-white font-bold py-2 px-4
+         border-b-4 border-blue-700
+         hover:border-blue-500 rounded'
+  {{on 'click' this.toggleCamera}}
+>
+  {{#if this.isCameraActive}}
     Stop Camera
+  {{else}}
+    Start Camera
   {{/if}}
 </button>
 
@@ -10,9 +17,13 @@
 <label>Last Detected Data:</label> {{this.lastDetectedData}}
 <br>
 
-{{#if this.cameraStream}}
+{{#if this.isCameraActive}}
+
+  {{! BEGIN-SNIPPET simple-demo-scanner.hbs }}
   <JsqrScanner
     @cameraStream={{this.cameraStream}}
     @onData={{this.handleData}}
+    @highlightColor='#3490DC'
   />
+  {{! END-SNIPPET }}
 {{/if}}

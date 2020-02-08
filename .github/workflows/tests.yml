@@ -23,6 +23,8 @@ jobs:
       run: yarn install
     - name: ESLint
       run: yarn lint:js
+    - name: Templates
+      run: yarn lint:hbs
     - name: Types
       run: yarn tsc --noEmit
 

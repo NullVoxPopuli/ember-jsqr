@@ -14,7 +14,6 @@ module('Integration | Component | jsqr-scanner', function(hooks) {
     // canvas.getContext doesn't exist in testing?
     // wat::
     // TypeError: this.element.getContext is not a function
-                // at AttachQrScannerModifier.didInstall (http://localhost:7357/assets/vendor.js:113080:34)
-
+    // at AttachQrScannerModifier.didInstall (http://localhost:7357/assets/vendor.js:113080:34)
   });
 });

@@ -22,14 +22,16 @@ export default class SimpleDemo extends Component {
   }
 
   private async start() {
-    let options = { video: { facingMode: 'environment' } };
+    let options = { video: { facingMode: 'environment',  } };
     let stream = await navigator.mediaDevices.getUserMedia(options);
 
     this.cameraStream = stream;
   }
 
   private stop() {
+    this.cameraStream?.getTracks().forEach(track => track.stop());
     this.cameraStream = undefined;
   }
   // END-SNIPPET
+  // video: { frameRate: { ideal: 10, max: 15 } }
 }

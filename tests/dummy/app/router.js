@@ -1,4 +1,3 @@
-
 import AddonDocsRouter, { docsRoute } from 'ember-cli-addon-docs/router';
 import config from './config/environment';
 
@@ -8,8 +7,10 @@ export default class Router extends AddonDocsRouter {
 }
 
 Router.map(function() {
-  docsRoute(this, function() { /* Your docs routes go here */ });
-  this.route('usage');
+  docsRoute(this, function() {
+    /* Your docs routes go here */
+    this.route('usage');
+  });
 
   this.route('not-found', { path: '/*path' });
 });

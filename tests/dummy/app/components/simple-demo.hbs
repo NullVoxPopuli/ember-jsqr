@@ -1,0 +1,18 @@
+<button type='button' {{on 'click' this.toggleCamera}}>
+  {{#if this.cameraStream}}
+    Start Camera
+  {{else}}
+    Stop Camera
+  {{/if}}
+</button>
+
+<br>
+<label>Last Detected Data:</label> {{this.lastDetectedData}}
+<br>
+
+{{#if this.cameraStream}}
+  <JsqrScanner
+    @cameraStream={{this.cameraStream}}
+    @onData={{this.handleData}}
+  />
+{{/if}}

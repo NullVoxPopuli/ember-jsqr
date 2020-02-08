@@ -17,13 +17,10 @@
 <label>Last Detected Data:</label> {{this.lastDetectedData}}
 <br>
 
-{{#if this.isCameraActive}}
-
-  {{! BEGIN-SNIPPET simple-demo-scanner.hbs }}
-  <JsqrScanner
-    @cameraStream={{this.cameraStream}}
-    @onData={{this.handleData}}
-    @highlightColor='#3490DC'
-  />
-  {{! END-SNIPPET }}
-{{/if}}
+{{! BEGIN-SNIPPET simple-demo-scanner.hbs }}
+<JsqrScanner
+  @cameraStream={{this.cameraStream}}
+  @onData={{this.handleData}}
+  @highlightColor='#3490DC'
+/>
+{{! END-SNIPPET }}

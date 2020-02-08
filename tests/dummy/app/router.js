@@ -10,6 +10,8 @@ Router.map(function() {
   docsRoute(this, function() {
     /* Your docs routes go here */
     this.route('usage');
+    this.route('single-camera');
+    this.route('multiple-cameras');
   });
 
   this.route('not-found', { path: '/*path' });

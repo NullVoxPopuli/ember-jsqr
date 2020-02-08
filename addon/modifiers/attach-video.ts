@@ -30,5 +30,4 @@ export default class AttachVideoModifier extends Modifier<Args> {
   willRemove() {
     this.video?.remove();
   }
-
 }

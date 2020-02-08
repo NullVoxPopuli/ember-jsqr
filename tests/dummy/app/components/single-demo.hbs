@@ -1,0 +1,20 @@
+{{! BEGIN-SNIPPET single-demo.hbs }}
+<JsqrScanner
+  @cameraStream={{this.cameraStream}}
+  @onData={{this.handleData}}
+/>
+
+<br>
+
+<button type='button' {{on 'click' this.toggleCamera}}>
+  {{#if this.isCameraActive}}
+    Stop Camera
+  {{else}}
+    Start Camera
+  {{/if}}
+</button>
+
+<br>
+
+<label>Last Detected Data:</label> {{this.lastDetectedData}}
+{{! END-SNIPPET }}

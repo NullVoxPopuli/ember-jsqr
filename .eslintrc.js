@@ -30,9 +30,10 @@ module.exports = {
   overrides: [
     // tricky files
     {
-      files: ['addon/decorators.ts'],
+      files: ['types/ember-modifier.d.ts'],
       rules: {
         '@typescript-eslint/ban-ts-ignore': 'off',
+        '@typescript-eslint/interface-name-prefix': 'off',
       },
     },
     // node files

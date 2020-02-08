@@ -6,8 +6,7 @@ type Args = {
   cameraStream: MediaStream;
   onData: <T>(data: string) => T;
   highlightColor?: string;
-}
-
+};
 
 /**
  * @desc

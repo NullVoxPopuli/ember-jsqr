@@ -10,14 +10,14 @@ type Args = {
     onData: <T>(data: string) => T;
     highlightColor?: string;
   };
-}
+};
 
 const DEFAULT_COLOR = '#FF3B58';
 
 export default class AttachQrScannerModifier extends Modifier<Args> {
   element!: HTMLCanvasElement;
   canvas?: CanvasRenderingContext2D | null;
-  _tick: FrameRequestCallback = () => { };
+  _tick: FrameRequestCallback = () => ({});
 
   get video() {
     return this.args?.positional[0];
@@ -58,14 +58,14 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
       let imageData = this.canvas.getImageData(0, 0, this.element.width, this.element.height);
       // TODO: add a way to asyncronously load jsQR (it's 40kb min+gzip)
       let code = jsQR(imageData.data, imageData.width, imageData.height, {
-        inversionAttempts: "dontInvert",
+        inversionAttempts: 'dontInvert',
       });
 
       if (code) {
         drawBox({
           canvas: this.canvas,
           location: code.location,
-          color: this.color
+          color: this.color,
         });
 
         this.onData(code.data);
@@ -76,15 +76,14 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
   }
 }
 
-
 function drawBox({
   canvas,
   location,
   color,
 }: {
-  canvas: CanvasRenderingContext2D,
-  location: QRCode['location'],
-  color: string,
+  canvas: CanvasRenderingContext2D;
+  location: QRCode['location'];
+  color: string;
 }) {
   drawLine(canvas, location.topLeftCorner, location.topRightCorner, color);
   drawLine(canvas, location.topRightCorner, location.bottomRightCorner, color);

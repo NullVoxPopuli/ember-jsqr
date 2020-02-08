@@ -3,7 +3,7 @@ import Modifier from 'ember-modifier';
 type Args = {
   positional: [MediaStream, <T>(video: HTMLVideoElement) => T];
   named: {};
-}
+};
 
 export default class AttachVideoModifier extends Modifier<Args> {
   video?: HTMLVideoElement;

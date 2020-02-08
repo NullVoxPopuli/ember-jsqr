@@ -10,7 +10,7 @@ export default class SimpleDemo extends Component {
     return this.cameraStream !== undefined;
   }
 
-  // BEGIN-SNIPPET simple-demo-scanner.ts
+  // BEGIN-SNIPPET 'simple-demo-scanner.ts'
   @action
   async toggleCamera() {
     this.isCameraActive ? this.stop() : await this.start();
@@ -22,7 +22,7 @@ export default class SimpleDemo extends Component {
   }
 
   private async start() {
-    let options = { video: { facingMode: 'environment',  } };
+    let options = { video: { facingMode: 'environment' } };
     let stream = await navigator.mediaDevices.getUserMedia(options);
 
     this.cameraStream = stream;
@@ -33,5 +33,4 @@ export default class SimpleDemo extends Component {
     this.cameraStream = undefined;
   }
   // END-SNIPPET
-  // video: { frameRate: { ideal: 10, max: 15 } }
 }

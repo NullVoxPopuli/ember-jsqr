@@ -13,7 +13,11 @@ Args:
 
 Where the `cameraStream` and `handleData` pieces are defined as:
 
-<DocsSnippet @name="simple-demo-scanner.ts" />
+<DocsSnippet 
+  @name="simple-demo-scanner.ts" 
+  @language='typescript' 
+  @showCopy={{true}} 
+/>
 
 ## Demo
 

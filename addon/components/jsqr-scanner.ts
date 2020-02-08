@@ -8,7 +8,21 @@ type Args = {
   highlightColor?: string;
 }
 
-export default class JsqrScannerComponent extends Component<Args> {
+
+/**
+ * @desc
+ * A component that wraps a canvas element, sets up a detached video element,
+ * and streams the video content from `cameraStream` to the canvas via the detached video.
+ *
+ * @class JsqrScanner
+ * @extends {Component}
+ * @access public
+ *
+ * @argument cameraStream [MediaStream] the stream data from getUserMedia's video track
+ * @argument onData [<T>(data: string) => T] callback function for handling QR Code detections.
+ *
+ */
+export default class JsqrScanner extends Component<Args> {
   @tracked video?: HTMLVideoElement;
 
   @action

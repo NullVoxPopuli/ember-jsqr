@@ -1,5 +1,9 @@
 'use strict';
 
 module.exports = {
-  extends: 'octane'
+  extends: 'octane',
+  rules: {
+    // ec-addon-docs teaches bad habbits?
+    'no-inline-styles': false,
+  },
 };

@@ -8,7 +8,7 @@ module('Integration | Modifier | attach-qr-scanner', function(hooks) {
 
   // Replace this with your real tests.
   test('it renders', async function(assert) {
-    await render(hbs`<div {{attach-qr-scanner}}></div>`);
+    await render(hbs`<canvas {{attach-qr-scanner}}></canvas>`);
 
     assert.ok(true);
   });

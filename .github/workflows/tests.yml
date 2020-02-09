@@ -1,6 +1,7 @@
 name: CI
 
-# Inspiration: https://github.com/alexdiliberto/ember-transformicons/blob/master/.github/workflows/ci.yml
+# Inspiration:
+# https://github.com/alexdiliberto/ember-transformicons/blob/master/.github/workflows/ci.yml
 on:
   pull_request:
   push:
@@ -11,6 +12,9 @@ on:
     # always run CI for tags
     tags:
       - '*'
+
+env:
+  CI: true
 
 jobs:
   # lint:

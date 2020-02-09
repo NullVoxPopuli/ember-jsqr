@@ -4,13 +4,13 @@
 module.exports = function(deployTarget) {
   let ENV = {
     build: {},
-    git: {
-      enabled: true,
-      repo: 'git@github.com:NullVoxPopuli/ember-jsqr.git',
-    },
-    'git-ci': {
-      enabled: true,
-    },
+    // git: {
+    //   enabled: true,
+    //   repo: 'git@github.com:NullVoxPopuli/ember-jsqr.git',
+    // },
+    // 'git-ci': {
+    //   enabled: true,
+    // },
     // include other plugin configuration that applies to all deploy targets here
   };
 

@@ -79,5 +79,4 @@ jobs:
       - name: Deploy
         env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-        run: |
-          yarn ember deploy production --verbose --activate
+        run: yarn ember deploy production --verbose --activate

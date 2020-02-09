@@ -76,4 +76,7 @@ jobs:
       - name: Deploy
         env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-        run: yarn ember deploy production
+        run: |
+          eval "$(ssh-agent -s)"
+          ssh-add - <<< "${DEPLOY_KEY}"
+          yarn ember deploy production

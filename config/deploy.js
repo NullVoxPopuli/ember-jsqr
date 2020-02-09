@@ -9,9 +9,9 @@ module.exports = function(deployTarget) {
       enabled: true,
       repo: 'git@github.com:NullVoxPopuli/ember-jsqr.git',
     },
-    // 'git-ci': {
-    //   enabled: true,
-    // },
+    'git-ci': {
+      enabled: true,
+    },
     // include other plugin configuration that applies to all deploy targets here
   };
 

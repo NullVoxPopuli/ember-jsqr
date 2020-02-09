@@ -5,11 +5,11 @@ module.exports = function(deployTarget) {
   let ENV = {
     build: {},
 
-    git: {
-      enabled: true,
-      repo: 'git@github.com:NullVoxPopuli/ember-jsqr.git',
-      destDir: 'dist',
-    },
+    // git: {
+    //   enabled: true,
+    //   repo: 'git@github.com:NullVoxPopuli/ember-jsqr.git',
+    //   destDir: 'dist',
+    // },
     // 'git-ci': {
     //   enabled: true,
     // },

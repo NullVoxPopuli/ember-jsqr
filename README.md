@@ -4,12 +4,7 @@ ember-jsqr
 Adds a convience component for integrating with [jsQR](https://github.com/cozmo/jsQR), which by itself, does not interact with the web camera APIs (getUserMedia).
 
 
-Compatibility
-------------------------------------------------------------------------------
-
-* Ember.js v3.15 or above
-* Ember CLI v3.15 or above
-* Node.js v8 or above
+View the [Documentation](https://nullvoxpopuli.github.io/ember-jsqr/)
 
 
 Installation
@@ -18,14 +13,6 @@ Installation
 ```
 ember install ember-jsqr
 ```
-
-NOTE: this is supes beta
-
-
-Usage
-------------------------------------------------------------------------------
-
-[Longer description of how to use the addon in apps.]
 
 
 Contributing

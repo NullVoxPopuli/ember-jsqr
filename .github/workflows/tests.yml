@@ -56,7 +56,7 @@ jobs:
   #     run: yarn install
   #   - name: Test with ${{ matrix.scenario }}
   #     run: yarn test:try-one ${{ matrix.scenario }}
-      #
+  #
   # https://github.com/ember-learn/ember-cli-addon-docs/issues/437
   deploy-prod:
     name: Production Deploy

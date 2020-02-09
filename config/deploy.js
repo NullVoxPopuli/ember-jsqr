@@ -5,6 +5,7 @@ module.exports = function(deployTarget) {
   let ENV = {
     build: {},
     git: {
+      enabled: true,
       repo: 'git@github.com:NullVoxPopuli/ember-jsqr.git',
     },
     'git-ci': {

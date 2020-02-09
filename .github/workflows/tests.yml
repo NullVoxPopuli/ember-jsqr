@@ -81,4 +81,4 @@ jobs:
           ssh-add - <<< "${DEPLOY_KEY}"
           git config --global user.email "nobody@github-actions.com"
           git config --global user.name "gh-pages deploy user"
-          yarn ember deploy production --verbose
+          yarn ember deploy production --verbose --activate

@@ -4,7 +4,7 @@ ember-jsqr
 Adds a convience component for integrating with [jsQR](https://github.com/cozmo/jsQR), which by itself, does not interact with the web camera APIs (getUserMedia).
 
 
-View the [Documentation](https://nullvoxpopuli.github.io/ember-jsqr/versions/master/)
+View the [Documentation](https://nullvoxpopuli.github.io/ember-jsqr/)
 
 
 Installation

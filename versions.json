@@ -16,5 +16,17 @@
     "name": "v0.7.0",
     "sha": "a2486fbf2f326097148e3b0880c6e4f0c515c284",
     "tag": null
+  },
+  "v0.7.1": {
+    "path": "versions/v0.7.1",
+    "name": "v0.7.1",
+    "sha": "9e4518f25e93be42c70c586ede21d6ca250eb2d4",
+    "tag": null
+  },
+  "-latest": {
+    "path": "",
+    "name": "Latest",
+    "sha": "9e4518f25e93be42c70c586ede21d6ca250eb2d4",
+    "tag": null
   }
 }

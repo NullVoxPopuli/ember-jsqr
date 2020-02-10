@@ -10,5 +10,11 @@
     "name": "v0.5.0",
     "sha": "6a4d7eb0d2ab0a1dd7ce7dc22424d762deecf04c",
     "tag": null
+  },
+  "v0.7.0": {
+    "path": "versions/v0.7.0",
+    "name": "v0.7.0",
+    "sha": "a2486fbf2f326097148e3b0880c6e4f0c515c284",
+    "tag": null
   }
 }

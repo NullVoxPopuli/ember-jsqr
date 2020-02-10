@@ -7243,13 +7243,13 @@ return e}function c(e,t){return(c=Object.setPrototypeOf||function(e,t){return e.
 var f=function(e){function t(){var e,r
 o(this,t)
 for(var n=arguments.length,i=new Array(n),a=0;a<n;a++)i[a]=arguments[a]
-return d(l(r=s(this,(e=u(t)).call.apply(e,[this].concat(i)))),"element",void 0),d(l(r),"canvas",void 0),d(l(r),"_tick",(function(){return{}})),r}var n,f,h,p,m
+return d(l(r=s(this,(e=u(t)).call.apply(e,[this].concat(i)))),"element",void 0),d(l(r),"canvas",void 0),d(l(r),"_tick",(function(){return{}})),d(l(r),"jsQR",void 0),r}var n,f,h,p,m
 return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
 e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&c(e,t)}(t,e),n=t,(f=[{key:"didInstall",value:function(){this.canvas=this.element.getContext("2d")}},{key:"didReceiveArguments",value:function(){this.video&&this.startScanning()}},{key:"startScanning",value:(p=regeneratorRuntime.mark((function e(){return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return this._tick=this.tick.bind(this),e.next=3,emberAutoImportDynamic("jsqr")
 case 3:this.jsQR=e.sent.default,requestAnimationFrame(this._tick)
 case 5:case"end":return e.stop()}}),e,this)})),m=function(){var e=this,t=arguments
 return new Promise((function(r,n){var o=p.apply(e,t)
-function a(e){i(o,r,n,a,s,"next",e)}function s(e){i(o,r,n,a,s,"throw",e)}a(void 0)}))},function(){return m.apply(this,arguments)})},{key:"tick",value:function(){if(this.jsQR&&this.video&&this.canvas){if(this.video.readyState===this.video.HAVE_ENOUGH_DATA){this.element.height=this.video.videoHeight,this.element.width=this.video.videoWidth,this.canvas.drawImage(this.video,0,0,this.element.width,this.element.height)
+function a(e){i(o,r,n,a,s,"next",e)}function s(e){i(o,r,n,a,s,"throw",e)}a(void 0)}))},function(){return m.apply(this,arguments)})},{key:"tick",value:function(){if(this.jsQR&&this.video&&this.canvas&&!this.isDestroyed&&!this.isDestroying){if(this.video.readyState===this.video.HAVE_ENOUGH_DATA){this.element.height=this.video.videoHeight,this.element.width=this.video.videoWidth,this.canvas.drawImage(this.video,0,0,this.element.width,this.element.height)
 var e=this.canvas.getImageData(0,0,this.element.width,this.element.height),t=this.jsQR(e.data,e.width,e.height,{inversionAttempts:"dontInvert"})
 t&&((0,r.drawBox)({canvas:this.canvas,location:t.location,color:this.color}),this.onData(t.data))}requestAnimationFrame(this._tick)}}},{key:"video",get:function(){var e
 return null===(e=this.args)||void 0===e?void 0:e.positional[0]}},{key:"onData",get:function(){var e

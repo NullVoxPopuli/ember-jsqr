@@ -16,6 +16,7 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
   element!: HTMLCanvasElement;
   canvas?: CanvasRenderingContext2D | null;
   _tick: FrameRequestCallback = () => ({});
+  jsQR?: Function;
 
   get video() {
     return this.args?.positional[0];
@@ -50,6 +51,7 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
   tick() {
     if (!this.jsQR) return;
     if (!this.video || !this.canvas) return;
+    if (this.isDestroyed || this.isDestroying) return;
 
     if (this.video.readyState === this.video.HAVE_ENOUGH_DATA) {
       this.element.height = this.video.videoHeight;
@@ -58,7 +60,6 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
       this.canvas.drawImage(this.video, 0, 0, this.element.width, this.element.height);
 
       let imageData = this.canvas.getImageData(0, 0, this.element.width, this.element.height);
-      // TODO: add a way to asyncronously load jsQR (it's 40kb min+gzip)
       let code = this.jsQR(imageData.data, imageData.width, imageData.height, {
         inversionAttempts: 'dontInvert',
       });

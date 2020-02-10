@@ -1,0 +1,29 @@
+name: Docs for Release
+
+on:
+  push:
+    tags:
+      - '*'
+
+env:
+  CI: true
+
+jobs:
+  deploy-prod:
+    name: Production Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: rwjblue/setup-volta@v1
+
+      - name: Set ENV
+        # 'master' or 'v1.2.3'
+        run: echo "::set-env name=ADDON_DOCS_VERSION_PATH::${GITHUB_REF##*/}"
+
+      - name: Install
+        run: yarn install
+      - name: Deploy
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          ADDON_DOCS_UPDATE_LATEST: 'true'
+        run: yarn ember deploy production --verbose --activate

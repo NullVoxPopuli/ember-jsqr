@@ -2,7 +2,7 @@
 
 The component invocation is as follows
 
-<DocsSnippet @name="simple-demo-scanner.hbs"/>
+<DocsSnippet @name="main-demo-scanner.hbs"/>
 
 ## Args
 

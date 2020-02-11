@@ -9,4 +9,4 @@ And the backing class controlling the state and getting the camera stream
 
 ## Demo
 
-<SingleDemo />
+<Demo::Single />

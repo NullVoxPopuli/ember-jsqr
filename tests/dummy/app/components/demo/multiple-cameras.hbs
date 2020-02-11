@@ -1,0 +1,37 @@
+{{! BEGIN-SNIPPET multiple-demo.hbs }}
+<JsqrScanner
+  @cameraStream={{this.cameraStream}}
+  @onData={{this.handleData}}
+/>
+
+<br>
+
+<label>
+  Select Camera
+
+  <select
+    {{did-insert this.getDevices}}
+    {{on 'change' this.selectCamera}}
+  >
+    {{#each this.videoDevices as |device|}}
+      <option value={{device.id}}>{{device.label}}</option>
+    {{/each}}
+  </select>
+</label>
+{{! END-SNIPPET }}
+<br>
+
+<Button
+  disabled={{this.isNotReadyToStart}}
+  {{on 'click' this.toggleCamera}}
+>
+  {{#if this.isCameraActive}}
+    Stop Camera
+  {{else}}
+    Start Camera
+  {{/if}}
+</Button>
+
+<br>
+
+<label>Last Detected Data:</label> {{this.lastDetectedData}}

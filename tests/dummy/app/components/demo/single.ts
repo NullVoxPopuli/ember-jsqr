@@ -1,9 +1,9 @@
-// BEGIN-SNIPPET simple-demo-scanner.ts
+// BEGIN-SNIPPET single-demo.ts
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
-export default class SimpleDemo extends Component {
+export default class SingleDemo extends Component {
   @tracked cameraStream?: MediaStream;
   @tracked lastDetectedData?: string;
 

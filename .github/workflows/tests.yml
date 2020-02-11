@@ -28,17 +28,6 @@ jobs:
     - name: Types
       run: yarn tsc --noEmit
 
-  tests_floating:
-    name: Floating
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - uses: rwjblue/setup-volta@v1
-    - name: Install
-      run: yarn install --no-lockfile --non-interactive
-    - name: Test
-      run: yarn test
-
   tests_ember_compat:
     name: Ember Compatability
     runs-on: ubuntu-latest
@@ -46,6 +35,7 @@ jobs:
       matrix:
         scenario:
         - "ember-3.13"
+        - "ember-3.15"
         - "ember-release"
         - "ember-beta"
         - "ember-canary"

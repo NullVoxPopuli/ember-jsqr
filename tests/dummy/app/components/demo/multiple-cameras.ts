@@ -58,5 +58,4 @@ export default class MultipleCamerasDemo extends Component {
     this.cameraStream?.getTracks().forEach(track => track.stop());
     this.cameraStream = undefined;
   }
-
 }

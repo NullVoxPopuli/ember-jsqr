@@ -1,5 +1,5 @@
 import ApplicationInstance from '@ember/application/instance';
-import ScannerService from 'dummy/services/ember-jsqr/-private/no-really-do-not-directly-access-this-service/scanner';
+import ScannerService from 'ember-jsqr/services/ember-jsqr/-private/no-really-do-not-directly-access-this-service/scanner';
 
 const KEY = 'ember-jsqr/-private/no-really-do-not-directly-access-this-service/scanner';
 

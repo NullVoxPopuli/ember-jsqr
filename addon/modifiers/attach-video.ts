@@ -1,4 +1,5 @@
 import Modifier from 'ember-modifier';
+import Ember from 'ember';
 
 type Args = {
   positional: [MediaStream, <T>(video: HTMLVideoElement) => T];

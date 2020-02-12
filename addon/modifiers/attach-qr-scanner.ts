@@ -5,7 +5,7 @@ type QRCode = import('jsqr').QRCode;
 
 import { drawBox } from './graphics/box';
 
-import ScannerService from 'dummy/services/ember-jsqr/-private/no-really-do-not-directly-access-this-service/scanner';
+import ScannerService from 'ember-jsqr/services/ember-jsqr/-private/no-really-do-not-directly-access-this-service/scanner';
 
 type Args = {
   positional: [HTMLVideoElement];

@@ -102,7 +102,7 @@ type ScanArgs = {
  */
 function scan({ canvas, jsQR, element, scanner, onScan }: ScanArgs) {
   let imageData = canvas.getImageData(0, 0, element.width, element.height);
-  let code = jsQR(imageData.data, imageData.width, imageData.height, {
+  let code: QRCode = jsQR(imageData.data, imageData.width, imageData.height, {
     inversionAttempts: 'dontInvert',
   });
 
@@ -110,7 +110,7 @@ function scan({ canvas, jsQR, element, scanner, onScan }: ScanArgs) {
     onScan(code);
 
     // calls the modifier's passed 'onData' method.
-    scanner.foundQRCode(code);
+    scanner.foundQRCode(code.data);
   }
 
   return code;

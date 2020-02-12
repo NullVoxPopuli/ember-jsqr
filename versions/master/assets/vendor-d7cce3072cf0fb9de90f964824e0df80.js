@@ -7274,8 +7274,7 @@ n(this,t)
 for(var i=arguments.length,u=new Array(i),c=0;c<i;c++)u[c]=arguments[c]
 return l(s(r=o(this,(e=a(t)).call.apply(e,[this].concat(u)))),"video",void 0),r}var r,c,d
 return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
-e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&u(e,t)}(t,e),r=t,(c=[{key:"didReceiveArguments",value:function(){var e
-this.videoStream&&this.onPlay&&(this.video=document.createElement("video"),(null===(e=Ember)||void 0===e?void 0:e.testing)||(this.video.srcObject=this.videoStream,this.video.setAttribute("playsInline","true"),this.video.play()),this.onPlay(this.video))}},{key:"willRemove",value:function(){var e
+e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&u(e,t)}(t,e),r=t,(c=[{key:"didReceiveArguments",value:function(){this.videoStream&&this.onPlay&&(this.video=document.createElement("video"),(null===Ember||void 0===Ember?void 0:Ember.testing)||(this.video.srcObject=this.videoStream,this.video.setAttribute("playsInline","true"),this.video.play()),this.onPlay(this.video))}},{key:"willRemove",value:function(){var e
 null===(e=this.video)||void 0===e||e.remove()}},{key:"videoStream",get:function(){return this.args.positional[0]}},{key:"onPlay",get:function(){return this.args.positional[1]}}])&&i(r.prototype,c),d&&i(r,d),t}(t.default)
 e.default=c})),define("ember-jsqr/modifiers/graphics/box",["exports"],(function(e){"use strict"
 function t(e,t,r,n){e.beginPath(),e.moveTo(t.x,t.y),e.lineTo(r.x,r.y),e.lineWidth=4,e.strokeStyle=n,e.stroke()}Object.defineProperty(e,"__esModule",{value:!0}),e.drawBox=function(e){var r=e.canvas,n=e.location,i=e.color

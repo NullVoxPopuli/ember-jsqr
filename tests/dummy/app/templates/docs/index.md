@@ -8,14 +8,13 @@ yarn add --dev ember-jsqr
 npm install --save-dev ember-jsqr
 ```
 
-
-<h2 class='docs-text-large-5 docs-font-bold docs-mb-4'>
+<H2>
   Compatibility
-</h2>
+</H2>
 
-<ul class='docs-list-disc docs-list-inside docs-p-4'>
+<Ul>
   <li>Ember.js v3.15 or above</li>
   <li>Ember CLI v3.15 or above</li>
   <li>Node.js v10 or above</li>
-</ul>
+</Ul>
 

@@ -12,6 +12,9 @@ module.exports = {
   env: {
     browser: true,
   },
+  globals: {
+    Ember: 'readonly',
+  },
   rules: {
     // eslint
     'prefer-const': 'off',

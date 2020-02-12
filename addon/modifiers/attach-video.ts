@@ -19,9 +19,12 @@ export default class AttachVideoModifier extends Modifier<Args> {
   didReceiveArguments() {
     if (this.videoStream && this.onPlay) {
       this.video = document.createElement('video');
-      this.video.srcObject = this.videoStream;
-      this.video.setAttribute('playsInline', 'true');
-      this.video.play();
+
+      if (!Ember?.testing) {
+        this.video.srcObject = this.videoStream;
+        this.video.setAttribute('playsInline', 'true');
+        this.video.play();
+      }
 
       this.onPlay(this.video);
     }

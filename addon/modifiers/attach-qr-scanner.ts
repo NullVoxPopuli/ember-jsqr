@@ -1,6 +1,11 @@
 import Modifier from 'ember-modifier';
+import { inject as service } from '@ember/service';
+
+type QRCode = import('jsqr').QRCode;
 
 import { drawBox } from './graphics/box';
+
+import ScannerService from 'dummy/services/ember-jsqr/-private/no-really-do-not-directly-access-this-service/scanner';
 
 type Args = {
   positional: [HTMLVideoElement];
@@ -11,12 +16,14 @@ type Args = {
 };
 
 const DEFAULT_COLOR = '#FF3B58';
+const KEY = 'ember-jsqr/-private/no-really-do-not-directly-access-this-service/scanner';
 
 export default class AttachQrScannerModifier extends Modifier<Args> {
+  @service(KEY) scanner!: ScannerService;
+
   element!: HTMLCanvasElement;
   canvas?: CanvasRenderingContext2D | null;
   _tick: FrameRequestCallback = () => ({});
-  jsQR?: Function;
 
   get video() {
     return this.args?.positional[0];
@@ -40,16 +47,20 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
     }
   }
 
+  willRemove() {
+    this.scanner.cleanup();
+  }
+
   async startScanning() {
     this._tick = this.tick.bind(this);
 
-    this.jsQR = (await import('jsqr')).default;
+    await this.scanner.start({ onData: this.onData });
 
     requestAnimationFrame(this._tick);
   }
 
   tick() {
-    if (!this.jsQR) return;
+    if (!this.scanner.jsQR) return;
     if (!this.video || !this.canvas) return;
     if (this.isDestroyed || this.isDestroying) return;
 
@@ -59,22 +70,48 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
 
       this.canvas.drawImage(this.video, 0, 0, this.element.width, this.element.height);
 
-      let imageData = this.canvas.getImageData(0, 0, this.element.width, this.element.height);
-      let code = this.jsQR(imageData.data, imageData.width, imageData.height, {
-        inversionAttempts: 'dontInvert',
+      scan({
+        jsQR: this.scanner.jsQR,
+        canvas: this.canvas,
+        element: this.element,
+        scanner: this.scanner,
+        onScan: code =>
+          drawBox({
+            canvas: this.canvas,
+            location: code.location,
+            color: this.color,
+          }),
       });
-
-      if (code) {
-        drawBox({
-          canvas: this.canvas,
-          location: code.location,
-          color: this.color,
-        });
-
-        this.onData(code.data);
-      }
     }
 
     requestAnimationFrame(this._tick);
   }
+}
+
+type ScanArgs = {
+  canvas: CanvasRenderingContext2D;
+  jsQR: Function;
+  element: HTMLCanvasElement;
+  scanner: ScannerService;
+  onScan: (code: QRCode) => void;
+};
+
+/**
+ * @note
+ * See the service about why this is the way it is.
+ */
+function scan({ canvas, jsQR, element, scanner, onScan }: ScanArgs) {
+  let imageData = canvas.getImageData(0, 0, element.width, element.height);
+  let code = jsQR(imageData.data, imageData.width, imageData.height, {
+    inversionAttempts: 'dontInvert',
+  });
+
+  if (code) {
+    onScan(code);
+
+    // calls the modifier's passed 'onData' method.
+    scanner.foundQRCode(code);
+  }
+
+  return code;
 }

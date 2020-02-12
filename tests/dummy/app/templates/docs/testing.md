@@ -1,3 +1,17 @@
+# Testing
+
+Mocking media devices in testing is almost impossible.
+We make the assumption we're making is that browser vendors are doing their job
+to ensure that all the existing JS APIs work, and that we don't need to
+test them.
+
+`scanQR` (the test-helper below) trigger's the component's `@onData`
+callback function so you, as an app developer, can test the scenarios where
+you scan valid/invalid data or scan multiple times, or whatever your usecase is.
+
+Here is an example test (a test that is used for the CI for this addon):
+
+```ts
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
@@ -15,9 +29,9 @@ module('Component | jsqr-scanner', function(hooks) {
     let data = { foo: 1 };
     let expected = JSON.stringify(data);
 
-    this.fakeCameraStream = {}; //td.object();;
+    this.fakeCameraStream = td.object();
 
-    this.receivedData = qrCode => {
+    this.receivedData = (qrCode: string) => {
       assert.equal(qrCode, expected);
     };
 
@@ -30,25 +44,5 @@ module('Component | jsqr-scanner', function(hooks) {
 
     scanQR(this.owner, data);
   });
-
-  test('does not pre-emptively call onData', async function(assert) {
-    let data = { foo: 1 };
-    let expected = JSON.stringify(data);
-
-    this.fakeCameraStream = {};
-    this.receivedData = td.func();
-
-    await render(hbs`
-      <JsqrScanner
-        @onData={{this.receivedData}}
-        @cameraStream={{this.fakeCameraStream}}
-      />
-    `);
-
-    assert.throws(() => td.verify(this.receivedData));
-
-    scanQR(this.owner, data);
-
-    assert.verify(this.receivedData(expected));
-  });
 });
+```

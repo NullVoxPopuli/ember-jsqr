@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="{{rootURL}}assets/test-support.css">
     {{content-for "head-footer"}}
     {{content-for "test-head-footer"}}
+
+    <script>
+      // thanks, testdouble.
+      // https://github.com/testdouble/testdouble.js/issues/438
+      window.global = window;
+    </script>
   </head>
   <body>
     {{content-for "body"}}

@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('usage');
     this.route('single-camera');
     this.route('multiple-cameras');
+    this.route('testing');
   });
 
   this.route('not-found', { path: '/*path' });

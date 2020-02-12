@@ -15,14 +15,13 @@ module('Component | jsqr-scanner', function(hooks) {
     let data = { foo: 1 };
     let expected = JSON.stringify(data);
 
-    this.fakeCameraStream = {}; //td.object();;
-
+    this.fakeCameraStream = {};
     this.receivedData = qrCode => {
       assert.equal(qrCode, expected);
     };
 
     await render(hbs`
-      <JsqrScanner
+      <JSQR::Scanner
         @onData={{this.receivedData}}
         @cameraStream={{this.fakeCameraStream}}
       />
@@ -39,7 +38,7 @@ module('Component | jsqr-scanner', function(hooks) {
     this.receivedData = td.func();
 
     await render(hbs`
-      <JsqrScanner
+      <JSQR::Scanner
         @onData={{this.receivedData}}
         @cameraStream={{this.fakeCameraStream}}
       />

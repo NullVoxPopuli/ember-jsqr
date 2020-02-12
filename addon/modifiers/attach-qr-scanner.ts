@@ -77,7 +77,7 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
         scanner: this.scanner,
         onScan: code =>
           drawBox({
-            canvas: this.canvas,
+            canvas: this.canvas!, // TS, huh?
             location: code.location,
             color: this.color,
           }),

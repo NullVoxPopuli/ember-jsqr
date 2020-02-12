@@ -1,7 +1,7 @@
 # Testing
 
 Mocking media devices in testing is almost impossible.
-We make the assumption we're making is that browser vendors are doing their job
+The assumption we're making is that browser vendors are doing their job
 to ensure that all the existing JS APIs work, and that we don't need to
 test them.
 
@@ -29,14 +29,13 @@ module('Component | jsqr-scanner', function(hooks) {
     let data = { foo: 1 };
     let expected = JSON.stringify(data);
 
-    this.fakeCameraStream = td.object();
-
-    this.receivedData = (qrCode: string) => {
+    this.fakeCameraStream = {};
+    this.receivedData = qrCode => {
       assert.equal(qrCode, expected);
     };
 
     await render(hbs`
-      <JsqrScanner
+      <JSQR::Scanner
         @onData={{this.receivedData}}
         @cameraStream={{this.fakeCameraStream}}
       />

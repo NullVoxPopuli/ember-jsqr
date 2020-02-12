@@ -13,7 +13,7 @@ type Args = {
  * A component that wraps a canvas element, sets up a detached video element,
  * and streams the video content from `cameraStream` to the canvas via the detached video.
  *
- * @class JsqrScanner
+ * @class JSQRScanner
  * @extends {Component}
  * @access public
  *
@@ -21,7 +21,7 @@ type Args = {
  * @argument onData [<T>(data: string) => T] callback function for handling QR Code detections.
  *
  */
-export default class JsqrScanner extends Component<Args> {
+export default class JSQRScanner extends Component<Args> {
   @tracked video?: HTMLVideoElement;
 
   @action

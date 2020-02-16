@@ -1,13 +1,42 @@
+{{!--
+  It doesn't make sense to render anything at all if
+  we don't even have a camera stream.
+
+  NOTE:
+    Since everyone would be wrapping JSQR::Scanner
+    in an if statement, it's kinda just a convenience
+    to have it here.
+--}}
 {{#if @cameraStream}}
+  {{!--
+    The canvas here should have zero size so the loader below
+    should be unimpeeded.
+
+    Once the animation frame handler begins, the
+    height and width will be overwritten with the
+    dimensions of the camera.
+    See: attach-qr-scanner#tick
+  --}}
   <canvas
+    height='0'
+    width='0'
     {{attach-video @cameraStream this.onPlay}}
     {{attach-qr-scanner
       this.video
       onData=@onData
+      onReady=this.onReady
       highlightColor=@highlightColor
     }}
     ...attributes
   >
-    {{yield}}
   </canvas>
+
+  {{!--
+    We definitely do not want to force a loader on users.
+  --}}
+  {{#if (has-block)}}
+    {{#unless this.isReady}}
+      {{yield}}
+    {{/unless}}
+  {{/if}}
 {{/if}}

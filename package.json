@@ -74,6 +74,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "loader.js": "^4.7.0",
     "prettier": "^1.19.1",
+    "qunit-console-grouper": "^0.2.0",
     "qunit-dom": "^1.0.0",
     "testdouble": "^3.12.5",
     "testdouble-qunit": "^2.1.1",

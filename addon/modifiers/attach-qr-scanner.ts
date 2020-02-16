@@ -11,6 +11,7 @@ type Args = {
   positional: [HTMLVideoElement];
   named: {
     onData: <T>(data: string) => T;
+    onReady: <T>() => T;
     highlightColor?: string;
   };
 };
@@ -31,6 +32,10 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
 
   get onData() {
     return this.args?.named.onData;
+  }
+
+  get onReady() {
+    return this.args?.named.onReady;
   }
 
   get color() {
@@ -55,6 +60,7 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
     this._tick = this.tick.bind(this);
 
     await this.scanner.start({ onData: this.onData });
+    this.onReady?.();
 
     requestAnimationFrame(this._tick);
   }

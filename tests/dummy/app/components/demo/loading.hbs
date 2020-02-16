@@ -1,0 +1,26 @@
+{{! BEGIN-SNIPPET loading.hbs }}
+<div
+  style='width: 320px; height: 240px;'
+  class='docs-flex docs-justify-center'
+>
+  <JSQR::Scanner
+    style='object-fit: contain;'
+    @cameraStream={{this.cameraStream}}
+    @onData={{this.handleData}}
+  >
+    <span class='docs-self-center'>Loading...</span>
+  </JSQR::Scanner>
+</div>
+{{! END-SNIPPET }}
+
+<Button {{on 'click' this.toggleCamera}}>
+  {{#if this.isCameraActive}}
+    Stop Camera
+  {{else}}
+    Start Camera
+  {{/if}}
+</Button>
+
+<br>
+
+<label>Last Detected Data:</label> {{this.lastDetectedData}}

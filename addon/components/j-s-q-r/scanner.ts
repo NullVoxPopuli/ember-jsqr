@@ -23,9 +23,15 @@ type Args = {
  */
 export default class JSQRScanner extends Component<Args> {
   @tracked video?: HTMLVideoElement;
+  @tracked isReady = false;
 
   @action
   onPlay(video: HTMLVideoElement) {
     this.video = video;
+  }
+
+  @action
+  onReady() {
+    this.isReady = true;
   }
 }

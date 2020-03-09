@@ -20,7 +20,7 @@
   <canvas
     height='0'
     width='0'
-    {{-private/attach-video @cameraStream this.onPlay}}
+    {{ember-jsqr-private/attach-video @cameraStream this.onPlay}}
     {{attach-qr-scanner
       this.video
       onData=@onData

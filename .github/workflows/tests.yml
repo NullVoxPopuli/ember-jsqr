@@ -67,3 +67,20 @@ jobs:
         env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         run: yarn ember deploy production --verbose --activate
+
+  publish:
+    name: Release
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    needs: [tests]
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: volta-cli/action@v1
+      - run: yarn install
+
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: yarn semantic-release

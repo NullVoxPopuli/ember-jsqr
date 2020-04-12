@@ -72,7 +72,7 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
-    needs: [tests]
+    needs: [tests_ember_compat]
 
     steps:
       - uses: actions/checkout@v1

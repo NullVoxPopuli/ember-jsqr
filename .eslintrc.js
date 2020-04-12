@@ -46,6 +46,7 @@ module.exports = {
         '.eslintrc.js',
         '.template-lintrc.js',
         '.prettierrc.js',
+        'commitlint.config.js',
         'ember-cli-build.js',
         'index.js',
         'testem.js',

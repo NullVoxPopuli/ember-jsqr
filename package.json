@@ -76,7 +76,7 @@
     "prettier": "^1.19.1",
     "qunit-console-grouper": "^0.2.0",
     "qunit-dom": "^1.2.0",
-    "testdouble": "^3.12.5",
+    "testdouble": "^3.13.1",
     "testdouble-qunit": "^2.1.1",
     "typescript": "^3.7.5"
   },

@@ -77,7 +77,7 @@
     "qunit-console-grouper": "^0.2.0",
     "qunit-dom": "^1.2.0",
     "semantic-release": "^17.0.7",
-    "testdouble": "^3.14.0",
+    "testdouble": "^3.15.0",
     "testdouble-qunit": "^2.1.1",
     "typescript": "^3.9.2"
   },

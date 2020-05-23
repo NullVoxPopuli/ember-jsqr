@@ -14,7 +14,7 @@ env:
 
 jobs:
   lint:
-    if: "! contains(toJSON(github.event.commitns.*.message), '[skip ci]')"
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
     name: Lint
     runs-on: ubuntu-latest
     steps:
@@ -33,7 +33,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GH_PAT }}
 
   tests_ember_compat:
-    if: "! contains(toJSON(github.event.commitns.*.message), '[skip ci]')"
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
     name: Ember Compatability
     runs-on: ubuntu-latest
     strategy:

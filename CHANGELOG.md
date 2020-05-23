@@ -1,3 +1,10 @@
+## [0.9.13](https://github.com/NullVoxPopuli/ember-jsqr/compare/v0.9.12...v0.9.13) (2020-05-23)
+
+
+### Bug Fixes
+
+* **internal:** ci typo ([1bf355e](https://github.com/NullVoxPopuli/ember-jsqr/commit/1bf355ec530a3c4906e200253e1edc7fd80e9b2a))
+
 ## [0.9.12](https://github.com/NullVoxPopuli/ember-jsqr/compare/v0.9.11...v0.9.12) (2020-05-23)
 
 

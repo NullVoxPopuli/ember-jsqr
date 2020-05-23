@@ -1,3 +1,10 @@
+## [0.9.11](https://github.com/NullVoxPopuli/ember-jsqr/compare/v0.9.10...v0.9.11) (2020-05-23)
+
+
+### Bug Fixes
+
+* **internal:** interpret ci skipping manually... ([7caff8c](https://github.com/NullVoxPopuli/ember-jsqr/commit/7caff8cfcfebd9a638b28dc86dfb26e53c767191))
+
 ## [0.9.10](https://github.com/NullVoxPopuli/ember-jsqr/compare/v0.9.9...v0.9.10) (2020-05-23)
 
 

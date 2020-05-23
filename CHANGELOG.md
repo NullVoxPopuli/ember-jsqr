@@ -1,3 +1,10 @@
+## [0.9.10](https://github.com/NullVoxPopuli/ember-jsqr/compare/v0.9.9...v0.9.10) (2020-05-23)
+
+
+### Bug Fixes
+
+* generate-changelog ([1b02744](https://github.com/NullVoxPopuli/ember-jsqr/commit/1b0274488f637f5fdabc8a890b3c7e7809328fb6))
+
 # [0.9.0](https://github.com/NullVoxPopuli/ember-jsqr/compare/v0.9.7...v0.9.0) (2020-05-23)
 
 
@@ -105,6 +112,3 @@
 
 
 # 0.3.0 (2020-02-09)
-
-
-

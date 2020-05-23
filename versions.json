@@ -2,8 +2,8 @@
   "master": {
     "path": "versions/master",
     "name": "master",
-    "sha": "000e3af7874bc099142ff22b27055d065f289a01",
-    "tag": "v0.9.12"
+    "sha": "1bf355ec530a3c4906e200253e1edc7fd80e9b2a",
+    "tag": null
   },
   "v0.5.0": {
     "path": "versions/v0.5.0",

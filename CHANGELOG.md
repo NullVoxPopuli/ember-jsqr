@@ -1,3 +1,10 @@
+## [0.9.12](https://github.com/NullVoxPopuli/ember-jsqr/compare/v0.9.11...v0.9.12) (2020-05-23)
+
+
+### Bug Fixes
+
+* **internal:** require lint to pass for publishing ([1a36608](https://github.com/NullVoxPopuli/ember-jsqr/commit/1a366087669a606d5df313c9420489db9c4229bd))
+
 ## [0.9.11](https://github.com/NullVoxPopuli/ember-jsqr/compare/v0.9.10...v0.9.11) (2020-05-23)
 
 

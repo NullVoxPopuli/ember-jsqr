@@ -1,3 +1,10 @@
+## [0.9.15](https://github.com/NullVoxPopuli/ember-jsqr/compare/v0.9.14...v0.9.15) (2020-05-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-typescript to ^3.1.4 ([0f1477b](https://github.com/NullVoxPopuli/ember-jsqr/commit/0f1477bafb723a29d71dbe5aa021090117a15fcf))
+
 ## [0.9.14](https://github.com/NullVoxPopuli/ember-jsqr/compare/v0.9.13...v0.9.14) (2020-05-29)
 
 

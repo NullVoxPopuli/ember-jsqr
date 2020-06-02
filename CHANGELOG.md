@@ -1,3 +1,10 @@
+## [0.9.18](https://github.com/NullVoxPopuli/ember-jsqr/compare/v0.9.17...v0.9.18) (2020-06-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-babel to ^7.20.5 ([4a484c1](https://github.com/NullVoxPopuli/ember-jsqr/commit/4a484c1dd9d3d5a5a42b1266031edbcead659bd9))
+
 ## [0.9.17](https://github.com/NullVoxPopuli/ember-jsqr/compare/v0.9.16...v0.9.17) (2020-05-30)
 
 

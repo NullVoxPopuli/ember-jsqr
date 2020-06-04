@@ -91,7 +91,7 @@
     "semantic-release": "^17.0.8",
     "testdouble": "^3.16.0",
     "testdouble-qunit": "^2.1.1",
-    "typescript": "^3.9.3"
+    "typescript": "^3.9.5"
   },
   "engines": {
     "node": "8.* || >= 10.*"

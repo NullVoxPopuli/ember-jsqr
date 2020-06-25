@@ -1,3 +1,10 @@
+## [0.9.19](https://github.com/NullVoxPopuli/ember-jsqr/compare/v0.9.18...v0.9.19) (2020-06-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-auto-import to ^1.6.0 ([243d381](https://github.com/NullVoxPopuli/ember-jsqr/commit/243d3815c9be6e4dc8e5a5aa285ebc4bc66fe386))
+
 ## [0.9.18](https://github.com/NullVoxPopuli/ember-jsqr/compare/v0.9.17...v0.9.18) (2020-06-02)
 
 

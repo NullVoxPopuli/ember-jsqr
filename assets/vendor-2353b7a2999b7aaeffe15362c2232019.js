@@ -7558,40 +7558,42 @@ if(Ember.HTMLBars)return Ember.HTMLBars.makeBoundHelper(e)
 return Ember.Handlebars.makeBoundHelper(e)}})),define("ember-jsqr/components/j-s-q-r/scanner",["exports","@glimmer/component"],(function(e,t){"use strict"
 var r,n,i,o,a,s,u,l
 function c(e){return(c="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function d(e,t,r,n){r&&Object.defineProperty(e,t,{enumerable:r.enumerable,configurable:r.configurable,writable:r.writable,value:r.initializer?r.initializer.call(n):void 0})}function f(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function h(e,t){for(var r=0;r<t.length;r++){var n=t[r]
-n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function p(e,t){return(p=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function m(e,t){return!t||"object"!==c(t)&&"function"!=typeof t?v(e):t}function v(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
-return e}function g(e){return(g=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function y(e,t,r,n,i){var o={}
-return Object.keys(n).forEach((function(e){o[e]=n[e]})),o.enumerable=!!o.enumerable,o.configurable=!!o.configurable,("value"in o||o.initializer)&&(o.writable=!0),o=r.slice().reverse().reduce((function(r,n){return n(e,t,r)||r}),o),i&&void 0!==o.initializer&&(o.value=o.initializer?o.initializer.call(i):void 0,o.initializer=void 0),void 0===o.initializer&&(Object.defineProperty(e,t,o),o=null),o}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-var b=Ember.HTMLBars.template({id:"smo5cq8G",block:'{"symbols":["&default","&attrs","@cameraStream","@highlightColor","@onData"],"statements":[[6,[37,3],[[32,3]],null,[["default"],[{"statements":[[2,"  "],[11,"canvas"],[24,"height","0"],[24,"width","0"],[17,2],[4,[38,1],[[32,3],[32,0,["onPlay"]]],null],[4,[38,2],[[32,0,["video"]]],[["onData","onReady","highlightColor"],[[32,5],[32,0,["onReady"]],[32,4]]]],[12],[2,"\\n  "],[13],[2,"\\n\\n"],[6,[37,3],[[27,[32,1]]],null,[["default"],[{"statements":[[6,[37,0],[[32,0,["isReady"]]],null,[["default"],[{"statements":[[2,"      "],[18,1,null],[2,"\\n"]],"parameters":[]}]]]],"parameters":[]}]]]],"parameters":[]}]]]],"hasEval":false,"upvars":["unless","attach-video","attach-qr-scanner","if"]}',meta:{moduleName:"ember-jsqr/components/j-s-q-r/scanner.hbs"}}),_=(r=Ember._tracked,n=Ember._tracked,i=Ember._action,o=Ember._action,l=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
-e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&p(e,t)})(o,e)
-var t,r,n,i=function(e){function t(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
+n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function p(e,t){return(p=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function m(e){var t=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
 if(Reflect.construct.sham)return!1
 if("function"==typeof Proxy)return!0
-try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}return function(){var r,n=g(e)
-if(t()){var i=g(this).constructor
+try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}()
+return function(){var r,n=y(e)
+if(t){var i=y(this).constructor
 r=Reflect.construct(n,arguments,i)}else r=n.apply(this,arguments)
-return m(this,r)}}(o)
+return v(this,r)}}function v(e,t){return!t||"object"!==c(t)&&"function"!=typeof t?g(e):t}function g(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
+return e}function y(e){return(y=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function b(e,t,r,n,i){var o={}
+return Object.keys(n).forEach((function(e){o[e]=n[e]})),o.enumerable=!!o.enumerable,o.configurable=!!o.configurable,("value"in o||o.initializer)&&(o.writable=!0),o=r.slice().reverse().reduce((function(r,n){return n(e,t,r)||r}),o),i&&void 0!==o.initializer&&(o.value=o.initializer?o.initializer.call(i):void 0,o.initializer=void 0),void 0===o.initializer&&(Object.defineProperty(e,t,o),o=null),o}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
+var _=Ember.HTMLBars.template({id:"smo5cq8G",block:'{"symbols":["&default","&attrs","@cameraStream","@highlightColor","@onData"],"statements":[[6,[37,3],[[32,3]],null,[["default"],[{"statements":[[2,"  "],[11,"canvas"],[24,"height","0"],[24,"width","0"],[17,2],[4,[38,1],[[32,3],[32,0,["onPlay"]]],null],[4,[38,2],[[32,0,["video"]]],[["onData","onReady","highlightColor"],[[32,5],[32,0,["onReady"]],[32,4]]]],[12],[2,"\\n  "],[13],[2,"\\n\\n"],[6,[37,3],[[27,[32,1]]],null,[["default"],[{"statements":[[6,[37,0],[[32,0,["isReady"]]],null,[["default"],[{"statements":[[2,"      "],[18,1,null],[2,"\\n"]],"parameters":[]}]]]],"parameters":[]}]]]],"parameters":[]}]]]],"hasEval":false,"upvars":["unless","attach-video","attach-qr-scanner","if"]}',meta:{moduleName:"ember-jsqr/components/j-s-q-r/scanner.hbs"}}),E=(r=Ember._tracked,n=Ember._tracked,i=Ember._action,o=Ember._action,l=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
+e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&p(e,t)})(o,e)
+var t,r,n,i=m(o)
 function o(){var e
 f(this,o)
 for(var t=arguments.length,r=new Array(t),n=0;n<t;n++)r[n]=arguments[n]
-return d(v(e=i.call.apply(i,[this].concat(r))),"video",s,v(e)),d(v(e),"isReady",u,v(e)),e}return t=o,(r=[{key:"onPlay",value:function(e){this.video=e}},{key:"onReady",value:function(){this.isReady=!0}}])&&h(t.prototype,r),n&&h(t,n),o}(t.default),s=y((a=l).prototype,"video",[r],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),u=y(a.prototype,"isReady",[n],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),y(a.prototype,"onPlay",[i],Object.getOwnPropertyDescriptor(a.prototype,"onPlay"),a.prototype),y(a.prototype,"onReady",[o],Object.getOwnPropertyDescriptor(a.prototype,"onReady"),a.prototype),a)
-e.default=_,Ember._setComponentTemplate(b,_)})),define("ember-jsqr/modifiers/attach-qr-scanner",["exports","ember-modifier","ember-jsqr/modifiers/graphics/box"],(function(e,t,r){"use strict"
+return d(g(e=i.call.apply(i,[this].concat(r))),"video",s,g(e)),d(g(e),"isReady",u,g(e)),e}return t=o,(r=[{key:"onPlay",value:function(e){this.video=e}},{key:"onReady",value:function(){this.isReady=!0}}])&&h(t.prototype,r),n&&h(t,n),o}(t.default),s=b((a=l).prototype,"video",[r],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),u=b(a.prototype,"isReady",[n],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),b(a.prototype,"onPlay",[i],Object.getOwnPropertyDescriptor(a.prototype,"onPlay"),a.prototype),b(a.prototype,"onReady",[o],Object.getOwnPropertyDescriptor(a.prototype,"onReady"),a.prototype),a)
+e.default=E,Ember._setComponentTemplate(_,E)})),define("ember-jsqr/modifiers/attach-qr-scanner",["exports","ember-modifier","ember-jsqr/modifiers/graphics/box"],(function(e,t,r){"use strict"
 var n,i,o,a
 function s(e){return(s="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function u(e,t,r,n,i,o,a){try{var s=e[o](a),u=s.value}catch(l){return void r(l)}s.done?t(u):Promise.resolve(u).then(n,i)}function l(e,t,r,n){r&&Object.defineProperty(e,t,{enumerable:r.enumerable,configurable:r.configurable,writable:r.writable,value:r.initializer?r.initializer.call(n):void 0})}function c(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function d(e,t){for(var r=0;r<t.length;r++){var n=t[r]
-n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function f(e,t){return(f=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function h(e,t){return!t||"object"!==s(t)&&"function"!=typeof t?p(e):t}function p(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
-return e}function m(e){return(m=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function v(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-var g,y,b,_,E,w,x=(n=Ember.inject.service("ember-jsqr/-private/no-really-do-not-directly-access-this-service/scanner"),a=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
-e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&f(e,t)})(y,e)
-var t,n,i,a,s,g=function(e){function t(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
+n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function f(e,t){return(f=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function h(e){var t=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
 if(Reflect.construct.sham)return!1
 if("function"==typeof Proxy)return!0
-try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}return function(){var r,n=m(e)
-if(t()){var i=m(this).constructor
+try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}()
+return function(){var r,n=v(e)
+if(t){var i=v(this).constructor
 r=Reflect.construct(n,arguments,i)}else r=n.apply(this,arguments)
-return h(this,r)}}(y)
-function y(){var e
-c(this,y)
+return p(this,r)}}function p(e,t){return!t||"object"!==s(t)&&"function"!=typeof t?m(e):t}function m(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
+return e}function v(e){return(v=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function g(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
+var y,b,_,E,w,x,k=(n=Ember.inject.service("ember-jsqr/-private/no-really-do-not-directly-access-this-service/scanner"),a=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
+e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&f(e,t)})(v,e)
+var t,n,i,a,s,p=h(v)
+function v(){var e
+c(this,v)
 for(var t=arguments.length,r=new Array(t),n=0;n<t;n++)r[n]=arguments[n]
-return l(p(e=g.call.apply(g,[this].concat(r))),"scanner",o,p(e)),v(p(e),"element",void 0),v(p(e),"canvas",void 0),v(p(e),"_tick",(function(){return{}})),e}return t=y,(n=[{key:"didInstall",value:function(){this.canvas=this.element.getContext("2d")}},{key:"didReceiveArguments",value:function(){this.video&&this.startScanning()}},{key:"willRemove",value:function(){this.scanner.cleanup()}},{key:"startScanning",value:(a=regeneratorRuntime.mark((function e(){var t
+return l(m(e=p.call.apply(p,[this].concat(r))),"scanner",o,m(e)),g(m(e),"element",void 0),g(m(e),"canvas",void 0),g(m(e),"_tick",(function(){return{}})),e}return t=v,(n=[{key:"didInstall",value:function(){this.canvas=this.element.getContext("2d")}},{key:"didReceiveArguments",value:function(){this.video&&this.startScanning()}},{key:"willRemove",value:function(){this.scanner.cleanup()}},{key:"startScanning",value:(a=regeneratorRuntime.mark((function e(){var t
 return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return this._tick=this.tick.bind(this),e.next=3,this.scanner.start({onData:this.onData})
 case 3:null===(t=this.onReady)||void 0===t||t.call(this),requestAnimationFrame(this._tick)
 case 5:case"end":return e.stop()}}),e,this)})),s=function(){var e=this,t=arguments
@@ -7602,51 +7604,53 @@ s&&(o(s),i.foundQRCode(s.data))}({jsQR:this.scanner.jsQR,canvas:this.canvas,elem
 return null===(e=this.args)||void 0===e?void 0:e.positional[0]}},{key:"onData",get:function(){var e
 return null===(e=this.args)||void 0===e?void 0:e.named.onData}},{key:"onReady",get:function(){var e
 return null===(e=this.args)||void 0===e?void 0:e.named.onReady}},{key:"color",get:function(){var e
-return(null===(e=this.args)||void 0===e?void 0:e.named.highlightColor)||"#FF3B58"}}])&&d(t.prototype,n),i&&d(t,i),y}(t.default),g=(i=a).prototype,y="scanner",b=[n],_={configurable:!0,enumerable:!0,writable:!0,initializer:null},w={},Object.keys(_).forEach((function(e){w[e]=_[e]})),w.enumerable=!!w.enumerable,w.configurable=!!w.configurable,("value"in w||w.initializer)&&(w.writable=!0),w=b.slice().reverse().reduce((function(e,t){return t(g,y,e)||e}),w),E&&void 0!==w.initializer&&(w.value=w.initializer?w.initializer.call(E):void 0,w.initializer=void 0),void 0===w.initializer&&(Object.defineProperty(g,y,w),w=null),o=w,i)
-e.default=x})),define("ember-jsqr/modifiers/attach-video",["exports","ember-modifier"],(function(e,t){"use strict"
+return(null===(e=this.args)||void 0===e?void 0:e.named.highlightColor)||"#FF3B58"}}])&&d(t.prototype,n),i&&d(t,i),v}(t.default),y=(i=a).prototype,b="scanner",_=[n],E={configurable:!0,enumerable:!0,writable:!0,initializer:null},x={},Object.keys(E).forEach((function(e){x[e]=E[e]})),x.enumerable=!!x.enumerable,x.configurable=!!x.configurable,("value"in x||x.initializer)&&(x.writable=!0),x=_.slice().reverse().reduce((function(e,t){return t(y,b,e)||e}),x),w&&void 0!==x.initializer&&(x.value=x.initializer?x.initializer.call(w):void 0,x.initializer=void 0),void 0===x.initializer&&(Object.defineProperty(y,b,x),x=null),o=x,i)
+e.default=k})),define("ember-jsqr/modifiers/attach-video",["exports","ember-modifier"],(function(e,t){"use strict"
 function r(e){return(r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){for(var r=0;r<t.length;r++){var n=t[r]
-n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function o(e,t){return(o=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function a(e,t){return!t||"object"!==r(t)&&"function"!=typeof t?s(e):t}function s(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
-return e}function u(e){return(u=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function l(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-var c=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
-e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&o(e,t)})(f,e)
-var t,r,c,d=function(e){function t(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
+n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function o(e,t){return(o=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function a(e){var t=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
 if(Reflect.construct.sham)return!1
 if("function"==typeof Proxy)return!0
-try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}return function(){var r,n=u(e)
-if(t()){var i=u(this).constructor
+try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}()
+return function(){var r,n=l(e)
+if(t){var i=l(this).constructor
 r=Reflect.construct(n,arguments,i)}else r=n.apply(this,arguments)
-return a(this,r)}}(f)
-function f(){var e
-n(this,f)
+return s(this,r)}}function s(e,t){return!t||"object"!==r(t)&&"function"!=typeof t?u(e):t}function u(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
+return e}function l(e){return(l=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function c(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
+var d=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
+e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&o(e,t)})(d,e)
+var t,r,s,l=a(d)
+function d(){var e
+n(this,d)
 for(var t=arguments.length,r=new Array(t),i=0;i<t;i++)r[i]=arguments[i]
-return l(s(e=d.call.apply(d,[this].concat(r))),"video",void 0),e}return t=f,(r=[{key:"didReceiveArguments",value:function(){this.videoStream&&this.onPlay&&(this.video=document.createElement("video"),(null===Ember||void 0===Ember?void 0:Ember.testing)||(this.video.srcObject=this.videoStream,this.video.setAttribute("playsInline","true"),this.video.play()),this.onPlay(this.video))}},{key:"willRemove",value:function(){var e
-null===(e=this.video)||void 0===e||e.remove()}},{key:"videoStream",get:function(){return this.args.positional[0]}},{key:"onPlay",get:function(){return this.args.positional[1]}}])&&i(t.prototype,r),c&&i(t,c),f}(t.default)
-e.default=c})),define("ember-jsqr/modifiers/graphics/box",["exports"],(function(e){"use strict"
+return c(u(e=l.call.apply(l,[this].concat(r))),"video",void 0),e}return t=d,(r=[{key:"didReceiveArguments",value:function(){this.videoStream&&this.onPlay&&(this.video=document.createElement("video"),(null===Ember||void 0===Ember?void 0:Ember.testing)||(this.video.srcObject=this.videoStream,this.video.setAttribute("playsInline","true"),this.video.play()),this.onPlay(this.video))}},{key:"willRemove",value:function(){var e
+null===(e=this.video)||void 0===e||e.remove()}},{key:"videoStream",get:function(){return this.args.positional[0]}},{key:"onPlay",get:function(){return this.args.positional[1]}}])&&i(t.prototype,r),s&&i(t,s),d}(t.default)
+e.default=d})),define("ember-jsqr/modifiers/graphics/box",["exports"],(function(e){"use strict"
 function t(e,t,r,n){e.beginPath(),e.moveTo(t.x,t.y),e.lineTo(r.x,r.y),e.lineWidth=4,e.strokeStyle=n,e.stroke()}Object.defineProperty(e,"__esModule",{value:!0}),e.drawBox=function(e){var r=e.canvas,n=e.location,i=e.color
 t(r,n.topLeftCorner,n.topRightCorner,i),t(r,n.topRightCorner,n.bottomRightCorner,i),t(r,n.bottomRightCorner,n.bottomLeftCorner,i),t(r,n.bottomLeftCorner,n.topLeftCorner,i)}})),define("ember-jsqr/services/ember-jsqr/-private/no-really-do-not-directly-access-this-service/scanner",["exports"],(function(e){"use strict"
 function t(e){return(t="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function r(e,t,r,n,i,o,a){try{var s=e[o](a),u=s.value}catch(l){return void r(l)}s.done?t(u):Promise.resolve(u).then(n,i)}function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){for(var r=0;r<t.length;r++){var n=t[r]
-n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function o(e,t){return(o=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function a(e,r){return!r||"object"!==t(r)&&"function"!=typeof r?s(e):r}function s(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
-return e}function u(e){return(u=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function l(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-var c=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
-e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&o(e,t)})(m,Ember.Service.extend({}))
-var t,c,d,f,h,p=function(e){function t(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
+n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function o(e,t){return(o=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function a(e){var t=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
 if(Reflect.construct.sham)return!1
 if("function"==typeof Proxy)return!0
-try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}return function(){var r,n=u(e)
-if(t()){var i=u(this).constructor
+try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}()
+return function(){var r,n=l(e)
+if(t){var i=l(this).constructor
 r=Reflect.construct(n,arguments,i)}else r=n.apply(this,arguments)
-return a(this,r)}}(m)
-function m(){var e
-n(this,m)
+return s(this,r)}}function s(e,r){return!r||"object"!==t(r)&&"function"!=typeof r?u(e):r}function u(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
+return e}function l(e){return(l=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function c(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
+var d=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
+e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&o(e,t)})(p,Ember.Service.extend({}))
+var t,s,l,d,f,h=a(p)
+function p(){var e
+n(this,p)
 for(var t=arguments.length,r=new Array(t),i=0;i<t;i++)r[i]=arguments[i]
-return l(s(e=p.call.apply(p,[this].concat(r))),"onData",void 0),l(s(e),"jsQR",void 0),e}return t=m,(c=[{key:"start",value:(f=regeneratorRuntime.mark((function e(t){return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:if(this.onData=t.onData,this.jsQR){e.next=6
+return c(u(e=h.call.apply(h,[this].concat(r))),"onData",void 0),c(u(e),"jsQR",void 0),e}return t=p,(s=[{key:"start",value:(d=regeneratorRuntime.mark((function e(t){return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:if(this.onData=t.onData,this.jsQR){e.next=6
 break}return e.next=5,emberAutoImportDynamic("jsqr")
 case 5:this.jsQR=e.sent.default
-case 6:case 7:case"end":return e.stop()}}),e,this)})),h=function(){var e=this,t=arguments
-return new Promise((function(n,i){var o=f.apply(e,t)
-function a(e){r(o,n,i,a,s,"next",e)}function s(e){r(o,n,i,a,s,"throw",e)}a(void 0)}))},function(e){return h.apply(this,arguments)})},{key:"foundQRCode",value:function(e){var t
-null===(t=this.onData)||void 0===t||t.call(this,e)}},{key:"cleanup",value:function(){this.onData=void 0}}])&&i(t.prototype,c),d&&i(t,d),m}()
-e.default=c})),define("ember-keyboard/fixtures/code-map",["exports","ember-keyboard/utils/generate-code-map"],(function(e,t){"use strict"
+case 6:case 7:case"end":return e.stop()}}),e,this)})),f=function(){var e=this,t=arguments
+return new Promise((function(n,i){var o=d.apply(e,t)
+function a(e){r(o,n,i,a,s,"next",e)}function s(e){r(o,n,i,a,s,"throw",e)}a(void 0)}))},function(e){return f.apply(this,arguments)})},{key:"foundQRCode",value:function(e){var t
+null===(t=this.onData)||void 0===t||t.call(this,e)}},{key:"cleanup",value:function(){this.onData=void 0}}])&&i(t.prototype,s),l&&i(t,l),p}()
+e.default=d})),define("ember-keyboard/fixtures/code-map",["exports","ember-keyboard/utils/generate-code-map"],(function(e,t){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0})
 var r=void 0,n=""
 "undefined"==typeof FastBoot&&(r=navigator.platform,n=navigator.product),e.default=(0,t.default)(r,n)})),define("ember-keyboard/fixtures/code-maps/chromium/linux",["exports"],(function(e){"use strict"

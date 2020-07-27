@@ -1,3 +1,10 @@
+## [0.9.22](https://github.com/NullVoxPopuli/ember-jsqr/compare/v0.9.21...v0.9.22) (2020-07-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @glimmer/component to ^1.0.1 ([453045c](https://github.com/NullVoxPopuli/ember-jsqr/commit/453045c7f1bba14747bd459513cef12c6a4e6cc1))
+
 ## [0.9.21](https://github.com/NullVoxPopuli/ember-jsqr/compare/v0.9.20...v0.9.21) (2020-06-26)
 
 

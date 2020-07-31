@@ -1,3 +1,10 @@
+## [0.9.24](https://github.com/NullVoxPopuli/ember-jsqr/compare/v0.9.23...v0.9.24) (2020-07-31)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-modifier to v2 ([3bd1574](https://github.com/NullVoxPopuli/ember-jsqr/commit/3bd15743cca73c4b034d38986a122c72ab3e6bee))
+
 ## [0.9.23](https://github.com/NullVoxPopuli/ember-jsqr/compare/v0.9.22...v0.9.23) (2020-07-27)
 
 

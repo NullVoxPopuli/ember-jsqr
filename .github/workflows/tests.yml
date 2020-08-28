@@ -18,8 +18,8 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - uses: rwjblue/setup-volta@v1
+    - uses: actions/checkout@v2
+    - uses: volta-cli/action@v1
     - name: Install
       run: yarn install
     - name: ESLint
@@ -40,13 +40,14 @@ jobs:
       matrix:
         scenario:
         - "ember-3.13"
-        - "ember-3.15"
+        - "ember-lts-3.16"
         - "ember-release"
         - "ember-beta"
         - "ember-canary"
+        - "ember-release-embroider"
     steps:
-    - uses: actions/checkout@v1
-    - uses: rwjblue/setup-volta@v1
+    - uses: actions/checkout@v2
+    - uses: volta-cli/action@v1
     - name: Install
       run: yarn install
     - name: Test with ${{ matrix.scenario }}
@@ -61,8 +62,8 @@ jobs:
     # if: success() && github.ref == 'refs/heads/master' && github.event_name == 'push'
     if: success() && github.event_name == 'push'
     steps:
-      - uses: actions/checkout@v1
-      - uses: rwjblue/setup-volta@v1
+      - uses: actions/checkout@v2
+      - uses: volta-cli/action@v1
       - name: Set ENV
         # 'master' or 'v1.2.3'
         run: echo "::set-env name=ADDON_DOCS_VERSION_PATH::${GITHUB_REF##*/}"
@@ -80,7 +81,7 @@ jobs:
     needs: [tests_ember_compat, lint]
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: volta-cli/action@v1
       - run: yarn install
 

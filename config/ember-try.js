@@ -14,10 +14,10 @@ module.exports = async function() {
         },
       },
       {
-        name: 'ember-3.15',
+        name: 'ember-lts-3.16',
         npm: {
           devDependencies: {
-            'ember-source': '~3.15.0',
+            'ember-source': '~3.16.0',
           },
         },
       },
@@ -42,6 +42,17 @@ module.exports = async function() {
         npm: {
           devDependencies: {
             'ember-source': await getChannelURL('canary'),
+          },
+        },
+      },
+      {
+        name: 'ember-release-embroider',
+        npm: {
+          devDependencies: {
+            'ember-source': await getChannelURL('release'),
+            '@embroider/core': '*',
+            '@embroider/webpack': '*',
+            '@embroider/compat': '*',
           },
         },
       },

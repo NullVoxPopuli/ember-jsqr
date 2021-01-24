@@ -88,7 +88,7 @@
     "prettier": "^1.19.1",
     "qunit-console-grouper": "^0.2.0",
     "qunit-dom": "^1.4.0",
-    "semantic-release": "^17.1.1",
+    "semantic-release": "^17.3.7",
     "testdouble": "^3.16.1",
     "testdouble-qunit": "^2.1.1",
     "typescript": "^3.9.7"

@@ -21,6 +21,7 @@
     height='0'
     width='0'
     {{attach-video @cameraStream this.onPlay}}
+    {{!-- the didReceiveArguments hook isn't re-running here --}}
     {{attach-qr-scanner
       this.video
       onData=@onData
@@ -29,6 +30,7 @@
     }}
     ...attributes
   >
+    {{log this.video}}
   </canvas>
 
   {{!--

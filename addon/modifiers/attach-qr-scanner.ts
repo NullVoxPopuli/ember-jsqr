@@ -48,6 +48,7 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
   }
 
   didReceiveArguments() {
+    console.log('oof', this.video);
     if (this.video) {
       this.startScanning();
     }

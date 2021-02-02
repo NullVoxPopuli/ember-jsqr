@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
 'use strict';
 
 module.exports = {

@@ -3,7 +3,7 @@ import Ember from 'ember';
 
 type Args = {
   positional: [MediaStream, <T>(video: HTMLVideoElement) => T];
-  named: {};
+  named: Record<string, unknown>;
 };
 
 export default class AttachVideoModifier extends Modifier<Args> {

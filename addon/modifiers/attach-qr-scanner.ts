@@ -1,6 +1,7 @@
 import Modifier from 'ember-modifier';
 import { inject as service } from '@ember/service';
 
+type JSQR = typeof import('jsqr');
 type QRCode = import('jsqr').QRCode;
 
 import { drawBox } from './graphics/box';
@@ -81,7 +82,7 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
         canvas: this.canvas,
         element: this.element,
         scanner: this.scanner,
-        onScan: code =>
+        onScan: (code) =>
           drawBox({
             canvas: this.canvas!, // TS, huh?
             location: code.location,
@@ -96,7 +97,7 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
 
 type ScanArgs = {
   canvas: CanvasRenderingContext2D;
-  jsQR: Function;
+  jsQR: JSQR;
   element: HTMLCanvasElement;
   scanner: ScannerService;
   onScan: (code: QRCode) => void;

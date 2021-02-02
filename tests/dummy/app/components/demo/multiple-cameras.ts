@@ -35,7 +35,7 @@ export default class MultipleCamerasDemo extends Component {
   @action
   async getDevices() {
     let devices = await navigator.mediaDevices.enumerateDevices();
-    let videoDevices = devices.filter(device => device.kind === 'videoinput');
+    let videoDevices = devices.filter((device) => device.kind === 'videoinput');
 
     this.videoDevices = videoDevices;
     this.selectedCamera = videoDevices[0].deviceId;
@@ -55,7 +55,7 @@ export default class MultipleCamerasDemo extends Component {
   // END-SNIPPET
 
   private stop() {
-    this.cameraStream?.getTracks().forEach(track => track.stop());
+    this.cameraStream?.getTracks().forEach((track) => track.stop());
     this.cameraStream = undefined;
   }
 }

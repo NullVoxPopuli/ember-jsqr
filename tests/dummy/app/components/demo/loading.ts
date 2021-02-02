@@ -29,7 +29,7 @@ export default class SingleDemo extends Component {
   }
 
   private stop() {
-    this.cameraStream?.getTracks().forEach(track => track.stop());
+    this.cameraStream?.getTracks().forEach((track) => track.stop());
     this.cameraStream = undefined;
   }
 }

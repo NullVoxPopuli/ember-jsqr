@@ -1,7 +1,7 @@
 import Modifier from 'ember-modifier';
 import { inject as service } from '@ember/service';
 
-type JSQR = typeof import('jsqr');
+type JSQR = typeof import('jsqr').default;
 type QRCode = import('jsqr').QRCode;
 
 import { drawBox } from './graphics/box';
@@ -109,7 +109,7 @@ type ScanArgs = {
  */
 function scan({ canvas, jsQR, element, scanner, onScan }: ScanArgs) {
   let imageData = canvas.getImageData(0, 0, element.width, element.height);
-  let code: QRCode = jsQR(imageData.data, imageData.width, imageData.height, {
+  let code = jsQR(imageData.data, imageData.width, imageData.height, {
     inversionAttempts: 'dontInvert',
   });
 

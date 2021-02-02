@@ -66,6 +66,10 @@ module.exports = {
       },
       plugins: ['node'],
       extends: ['plugin:node/recommended'],
+      rules: {
+        // TODO: use common lint package
+        '@typescript-eslint/no-var-requires': 'off',
+      },
     },
   ],
 };

@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import Modifier from 'ember-modifier';
 import { inject as service } from '@ember/service';
 
@@ -9,7 +10,7 @@ import { drawBox } from './graphics/box';
 import ScannerService from 'ember-jsqr/services/ember-jsqr/-private/no-really-do-not-directly-access-this-service/scanner';
 
 type Args = {
-  positional: [HTMLVideoElement];
+  positional: [MediaStream];
   named: {
     onData: <T>(data: string) => T;
     onReady: <T>() => T;
@@ -23,12 +24,14 @@ const KEY = 'ember-jsqr/-private/no-really-do-not-directly-access-this-service/s
 export default class AttachQrScannerModifier extends Modifier<Args> {
   @service(KEY) scanner!: ScannerService;
 
-  element!: HTMLCanvasElement;
-  canvas?: CanvasRenderingContext2D | null;
+  declare video?: HTMLVideoElement;
+  declare canvas?: CanvasRenderingContext2D | null;
+  declare element: HTMLCanvasElement;
+
   _tick: FrameRequestCallback = () => ({});
 
-  get video() {
-    return this.args?.positional[0];
+  get videoStream() {
+    return this.args.positional[0];
   }
 
   get onData() {
@@ -48,14 +51,22 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
   }
 
   didReceiveArguments() {
-    console.log('oof', this.video);
-    if (this.video) {
+    if (this.videoStream) {
+      this.video = document.createElement('video');
+
+      if (!Ember?.testing) {
+        this.video.srcObject = this.videoStream;
+        this.video.setAttribute('playsInline', 'true');
+        this.video.play();
+      }
+
       this.startScanning();
     }
   }
 
   willRemove() {
     this.scanner.cleanup();
+    this.video?.remove();
   }
 
   async startScanning() {

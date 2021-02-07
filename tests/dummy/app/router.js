@@ -14,6 +14,7 @@ Router.map(function () {
     this.route('multiple-cameras');
     this.route('testing');
     this.route('loading');
+    this.route('attach-qr-scanner');
   });
 
   this.route('not-found', { path: '/*path' });

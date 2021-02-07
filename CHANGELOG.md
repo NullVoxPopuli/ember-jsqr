@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/NullVoxPopuli/ember-jsqr/compare/v1.0.0...v1.0.1) (2021-02-07)
+
+
+### Bug Fixes
+
+* update docs deployment config ([e9f4e54](https://github.com/NullVoxPopuli/ember-jsqr/commit/e9f4e5458d8273c10b176a52f4dba803f78adcd6))
+
 # [1.0.0](https://github.com/NullVoxPopuli/ember-jsqr/compare/v0.9.29...v1.0.0) (2021-02-07)
 
 

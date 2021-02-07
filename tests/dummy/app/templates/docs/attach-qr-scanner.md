@@ -27,7 +27,7 @@ export default class MyComponent extends Component {
   }
 
   @action
-  handleData(data: string) {
+  handleData(data) {
     console.log(data);
   }
 

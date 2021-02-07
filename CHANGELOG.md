@@ -1,3 +1,27 @@
+# [1.0.0](https://github.com/NullVoxPopuli/ember-jsqr/compare/v0.9.29...v1.0.0) (2021-02-07)
+
+
+### Bug Fixes
+
+* update workflow ([e3ab4b4](https://github.com/NullVoxPopuli/ember-jsqr/commit/e3ab4b4275080f0c02e71e669f5586dd12fd30ab))
+
+
+### chore
+
+* drop support for node 8 and 10 ([18c9943](https://github.com/NullVoxPopuli/ember-jsqr/commit/18c994388bc79f7ae024bdd9c9160ef276128c23))
+
+
+### Features
+
+* document the attach qr scanner modifier and add tests ([07ccb73](https://github.com/NullVoxPopuli/ember-jsqr/commit/07ccb73bf843b4dc94874722d2725a260a229822))
+
+
+### BREAKING CHANGES
+
+* drop support for node 8 and 10
+
+Also, drop support for Ember 3.13, Ember 3.15
+
 ## [0.9.29](https://github.com/NullVoxPopuli/ember-jsqr/compare/v0.9.28...v0.9.29) (2020-08-11)
 
 

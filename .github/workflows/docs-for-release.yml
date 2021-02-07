@@ -2,24 +2,24 @@ name: Docs for Release
 
 on:
   push:
+    branches:
+      - master
     tags:
-      - '*'
-
-env:
-  CI: true
+      - 'v*'
 
 jobs:
-  deploy-prod:
-    name: Production Deploy
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
       - uses: volta-cli/action@v1
 
-      - name: Install
-        run: yarn install
-      - name: Deploy
-        env:
+      - run: echo "ADDON_DOCS_VERSION_PATH=${GITHUB_REF##*/}" >> $GITHUB_ENV
+      - if: contains(github.ref , 'master') != true
+        run: echo "ADDON_DOCS_UPDATE_LATEST=true" >> $GITHUB_ENV
+      - run: yarn install
+      - env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-          ADDON_DOCS_UPDATE_LATEST: 'true'
-        run: yarn ember deploy production --verbose --activate
+        run: yarn deploy

@@ -53,24 +53,6 @@ jobs:
     - name: Test with ${{ matrix.scenario }}
       run: yarn test:try-one ${{ matrix.scenario }}
 
-  # https://github.com/ember-learn/ember-cli-addon-docs/issues/437
-  deploy-prod:
-    name: Production Deploy
-    runs-on: ubuntu-latest
-    needs: [tests_ember_compat, lint]
-    # if: (branch = master OR tag IS present) AND type = push
-    # if: success() && github.ref == 'refs/heads/master' && github.event_name == 'push'
-    if: success() && github.event_name == 'push'
-    steps:
-      - uses: actions/checkout@v2
-      - uses: volta-cli/action@v1
-      - name: Install
-        run: yarn install
-      - name: Deploy
-        env:
-          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-        run: yarn ember deploy production --verbose --activate
-
   publish:
     name: Release
     runs-on: ubuntu-latest

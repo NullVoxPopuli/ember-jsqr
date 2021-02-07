@@ -22,4 +22,4 @@ jobs:
       - run: yarn install
       - env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-        run: yarn ember deploy production
+        run: yarn ember deploy production --verbose --activate

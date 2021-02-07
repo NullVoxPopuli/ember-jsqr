@@ -1,6 +1,8 @@
 import Service from '@ember/service';
 import { assert } from '@ember/debug';
 
+type JSQR = typeof import('jsqr').default;
+
 interface ScannerOptions {
   onData: <T>(data: string) => T;
 }
@@ -31,9 +33,7 @@ interface ScannerOptions {
  * about multiple instance of jsqr floating around.
  *
  */
-export default class ScannerService extends Service.extend({
-  // anything which *must* be merged to prototype here
-}) {
+export default class ScannerService extends Service {
   /**
    * @desc
    * passed in .start() as the callback for when data is detected from jsQR
@@ -46,7 +46,7 @@ export default class ScannerService extends Service.extend({
    * @desc
    * the jsQR module.
    */
-  jsQR?: Function;
+  jsQR?: JSQR;
 
   /**
    * @desc

@@ -1,6 +1,8 @@
+import Ember from 'ember';
 import Modifier from 'ember-modifier';
 import { inject as service } from '@ember/service';
 
+type JSQR = typeof import('jsqr').default;
 type QRCode = import('jsqr').QRCode;
 
 import { drawBox } from './graphics/box';
@@ -8,7 +10,7 @@ import { drawBox } from './graphics/box';
 import ScannerService from 'ember-jsqr/services/ember-jsqr/-private/no-really-do-not-directly-access-this-service/scanner';
 
 type Args = {
-  positional: [HTMLVideoElement];
+  positional: [MediaStream];
   named: {
     onData: <T>(data: string) => T;
     onReady: <T>() => T;
@@ -22,12 +24,14 @@ const KEY = 'ember-jsqr/-private/no-really-do-not-directly-access-this-service/s
 export default class AttachQrScannerModifier extends Modifier<Args> {
   @service(KEY) scanner!: ScannerService;
 
-  element!: HTMLCanvasElement;
-  canvas?: CanvasRenderingContext2D | null;
+  declare video?: HTMLVideoElement;
+  declare canvas?: CanvasRenderingContext2D | null;
+  declare element: HTMLCanvasElement;
+
   _tick: FrameRequestCallback = () => ({});
 
-  get video() {
-    return this.args?.positional[0];
+  get videoStream() {
+    return this.args.positional[0];
   }
 
   get onData() {
@@ -47,13 +51,22 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
   }
 
   didReceiveArguments() {
-    if (this.video) {
+    if (this.videoStream) {
+      this.video = document.createElement('video');
+
+      if (!Ember?.testing) {
+        this.video.srcObject = this.videoStream;
+        this.video.setAttribute('playsInline', 'true');
+        this.video.play();
+      }
+
       this.startScanning();
     }
   }
 
   willRemove() {
     this.scanner.cleanup();
+    this.video?.remove();
   }
 
   async startScanning() {
@@ -81,7 +94,7 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
         canvas: this.canvas,
         element: this.element,
         scanner: this.scanner,
-        onScan: code =>
+        onScan: (code) =>
           drawBox({
             canvas: this.canvas!, // TS, huh?
             location: code.location,
@@ -96,7 +109,7 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
 
 type ScanArgs = {
   canvas: CanvasRenderingContext2D;
-  jsQR: Function;
+  jsQR: JSQR;
   element: HTMLCanvasElement;
   scanner: ScannerService;
   onScan: (code: QRCode) => void;
@@ -108,7 +121,7 @@ type ScanArgs = {
  */
 function scan({ canvas, jsQR, element, scanner, onScan }: ScanArgs) {
   let imageData = canvas.getImageData(0, 0, element.width, element.height);
-  let code: QRCode = jsQR(imageData.data, imageData.width, imageData.height, {
+  let code = jsQR(imageData.data, imageData.width, imageData.height, {
     inversionAttempts: 'dontInvert',
   });
 

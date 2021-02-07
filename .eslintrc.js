@@ -44,6 +44,7 @@ module.exports = {
       files: [
         '.ember-cli.js',
         '.eslintrc.js',
+        '.prettierrc.js',
         '.template-lintrc.js',
         '.prettierrc.js',
         'commitlint.config.js',
@@ -64,13 +65,11 @@ module.exports = {
         node: true,
       },
       plugins: ['node'],
-      rules: Object.assign({}, require('eslint-plugin-node').configs.recommended.rules, {
-        // add your custom rules and overrides for node files here
-
-        // specifically for testem...
-        '@typescript-eslint/camelcase': 'off',
+      extends: ['plugin:node/recommended'],
+      rules: {
+        // TODO: use common lint package
         '@typescript-eslint/no-var-requires': 'off',
-      }),
+      },
     },
   ],
 };

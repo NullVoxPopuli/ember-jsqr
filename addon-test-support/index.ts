@@ -9,7 +9,7 @@ type HasLookup = Pick<ApplicationInstance, 'lookup'>;
  * @desc
  * manually simulates the activation of a successful scan of jsQR.
  */
-export function scanQR(owner: HasLookup, data: object) {
+export function scanQR(owner: HasLookup, data: unknown) {
   let service = owner.lookup(`service:${KEY}`) as ScannerService;
 
   let code = JSON.stringify(data);

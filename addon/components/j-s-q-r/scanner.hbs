@@ -20,9 +20,8 @@
   <canvas
     height='0'
     width='0'
-    {{attach-video @cameraStream this.onPlay}}
     {{attach-qr-scanner
-      this.video
+      @cameraStream
       onData=@onData
       onReady=this.onReady
       highlightColor=@highlightColor

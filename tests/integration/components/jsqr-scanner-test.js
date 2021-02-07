@@ -9,17 +9,17 @@ import { scanQR } from 'ember-jsqr/test-support';
 import RSVP from 'rsvp';
 import ScannerService from 'ember-jsqr/services/ember-jsqr/-private/no-really-do-not-directly-access-this-service/scanner';
 
-module('Component | jsqr-scanner', function(hooks) {
+module('Component | jsqr-scanner', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
+  test('it renders', async function (assert) {
     assert.expect(1);
 
     let data = { foo: 1 };
     let expected = JSON.stringify(data);
 
     this.fakeCameraStream = {};
-    this.receivedData = qrCode => {
+    this.receivedData = (qrCode) => {
       assert.equal(qrCode, expected);
     };
 
@@ -33,7 +33,7 @@ module('Component | jsqr-scanner', function(hooks) {
     scanQR(this.owner, data);
   });
 
-  test('does not pre-emptively call onData', async function(assert) {
+  test('does not pre-emptively call onData', async function (assert) {
     let data = { foo: 1 };
     let expected = JSON.stringify(data);
 
@@ -54,10 +54,10 @@ module('Component | jsqr-scanner', function(hooks) {
     assert.verify(this.receivedData(expected));
   });
 
-  module('Unfortunately implementation-aware tests... :(', function(hooks) {
+  module('Unfortunately implementation-aware tests... :(', function (hooks) {
     let fakeModuleLoader;
 
-    hooks.beforeEach(function() {
+    hooks.beforeEach(function () {
       fakeModuleLoader = RSVP.defer();
 
       // It's unfortunate that this service key has to be copied around places,
@@ -74,7 +74,7 @@ module('Component | jsqr-scanner', function(hooks) {
       );
     });
 
-    test('Block params can be used for loading', async function(assert) {
+    test('Block params can be used for loading', async function (assert) {
       this.fakeCameraStream = {};
       this.receivedData = td.func();
 

@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/NullVoxPopuli/ember-jsqr/compare/v1.0.3...v1.0.4) (2021-02-07)
+
+
+### Bug Fixes
+
+* use ember deploy instead of non-existant script ([49502b7](https://github.com/NullVoxPopuli/ember-jsqr/commit/49502b779b1820db72f9e526fd32c0f1518d85e2))
+
 ## [1.0.3](https://github.com/NullVoxPopuli/ember-jsqr/compare/v1.0.2...v1.0.3) (2021-02-07)
 
 

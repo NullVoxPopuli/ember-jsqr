@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/NullVoxPopuli/ember-jsqr/compare/v1.0.1...v1.0.2) (2021-02-07)
+
+
+### Bug Fixes
+
+* remove skip ci constraint for push/tags workflow ([7812771](https://github.com/NullVoxPopuli/ember-jsqr/commit/7812771e1be02f288e32e1ae39020ef07c65af4f))
+
 ## [1.0.1](https://github.com/NullVoxPopuli/ember-jsqr/compare/v1.0.0...v1.0.1) (2021-02-07)
 
 

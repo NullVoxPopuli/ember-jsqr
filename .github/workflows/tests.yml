@@ -30,7 +30,7 @@ jobs:
       run: yarn lint:hbs
     - name: Types
       run: yarn tsc --noEmit
-    - uses: wagoid/commitlint-github-action@v2.2.0
+    - uses: wagoid/commitlint-github-action@v2.2.2
 
   tests_ember_compat:
     if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"

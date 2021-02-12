@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/NullVoxPopuli/ember-jsqr/compare/v1.0.5...v1.0.6) (2021-02-12)
+
+
+### Bug Fixes
+
+* **deps:** update glimmer.js packages to ^1.0.3 ([2c5da09](https://github.com/NullVoxPopuli/ember-jsqr/commit/2c5da0921f2ab7c023da41b2530f82c9d3304b67))
+
 ## [1.0.5](https://github.com/NullVoxPopuli/ember-jsqr/compare/v1.0.4...v1.0.5) (2021-02-12)
 
 

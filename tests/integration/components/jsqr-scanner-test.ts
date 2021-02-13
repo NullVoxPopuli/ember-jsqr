@@ -2,7 +2,6 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render, settled } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
-import td from 'testdouble';
 
 import { scanQR } from 'ember-jsqr/test-support';
 
@@ -18,15 +17,17 @@ module('Component | jsqr-scanner', function (hooks) {
     let data = { foo: 1 };
     let expected = JSON.stringify(data);
 
-    this.fakeCameraStream = {};
-    this.receivedData = (qrCode) => {
-      assert.equal(qrCode, expected);
-    };
+    this.setProperties({
+      fakeStream: {},
+      receivedData: (qrCode: string) => {
+        assert.equal(qrCode, expected);
+      },
+    });
 
     await render(hbs`
       <JSQR::Scanner
         @onData={{this.receivedData}}
-        @cameraStream={{this.fakeCameraStream}}
+        @cameraStream={{this.fakeStream}}
       />
     `);
 
@@ -34,28 +35,34 @@ module('Component | jsqr-scanner', function (hooks) {
   });
 
   test('does not pre-emptively call onData', async function (assert) {
+    assert.expect(2);
+
     let data = { foo: 1 };
     let expected = JSON.stringify(data);
+    let actual: string | undefined;
 
-    this.fakeCameraStream = {};
-    this.receivedData = td.func();
+    this.setProperties({
+      fakeStream: {},
+      receivedData: (data: string) => {
+        actual = data;
+        assert.ok(true, 'onData called once');
+      },
+    });
 
     await render(hbs`
       <JSQR::Scanner
         @onData={{this.receivedData}}
-        @cameraStream={{this.fakeCameraStream}}
+        @cameraStream={{this.fakeStream}}
       />
     `);
 
-    assert.throws(() => td.verify(this.receivedData));
-
     scanQR(this.owner, data);
 
-    assert.verify(this.receivedData(expected));
+    assert.deepEqual(actual, expected);
   });
 
   module('Unfortunately implementation-aware tests... :(', function (hooks) {
-    let fakeModuleLoader;
+    let fakeModuleLoader: RSVP.Deferred<void>;
 
     hooks.beforeEach(function () {
       fakeModuleLoader = RSVP.defer();
@@ -75,13 +82,15 @@ module('Component | jsqr-scanner', function (hooks) {
     });
 
     test('Block params can be used for loading', async function (assert) {
-      this.fakeCameraStream = {};
-      this.receivedData = td.func();
+      this.setProperties({
+        fakeStream: {},
+        receivedData: () => null,
+      });
 
       await render(hbs`
         <JSQR::Scanner
           @onData={{this.receivedData}}
-          @cameraStream={{this.fakeCameraStream}}
+          @cameraStream={{this.fakeStream}}
         >
           <span>Loading</span>
         </JSQR::Scanner>
@@ -89,7 +98,8 @@ module('Component | jsqr-scanner', function (hooks) {
 
       assert.dom().containsText('Loading');
 
-      await fakeModuleLoader.resolve();
+      fakeModuleLoader.resolve();
+
       await settled();
 
       assert.dom().doesNotContainText('Loading');

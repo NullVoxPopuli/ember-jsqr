@@ -9992,11 +9992,6 @@ is-regex@^1.1.1:
     call-bind "^1.0.2"
     has-symbols "^1.0.1"
 
-is-regexp@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/is-regexp/-/is-regexp-1.0.0.tgz#fd2d883545c46bac5a633e7b9a09e87fa2cb5069"
-  integrity sha1-/S2INUXEa6xaYz57mgnof6LLUGk=
-
 is-retry-allowed@^1.0.0, is-retry-allowed@^1.1.0:
   version "1.2.0"
   resolved "https://registry.npmjs.org/is-retry-allowed/-/is-retry-allowed-1.2.0.tgz#d778488bd0a4666a3be8a1482b9f2baafedea8b4"
@@ -13283,14 +13278,6 @@ querystring@0.2.0:
   resolved "https://registry.npmjs.org/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
   integrity sha1-sgmEkgO7Jd+CDadW50cAWHhSFiA=
 
-quibble@^0.6.4:
-  version "0.6.5"
-  resolved "https://registry.npmjs.org/quibble/-/quibble-0.6.5.tgz#455f606ab3396d04f2384a2ba7f6ce564c4158ed"
-  integrity sha512-L3/bDHWjHm9zdG0Aqj7lhmp6Q5RFjXeitO9CGzWKP83d6BlGS0lLo9oswxgq62gwuIF7apT9tO0dw9kNuvb9eg==
-  dependencies:
-    lodash "^4.17.14"
-    resolve "^1.11.1"
-
 quick-lru@^4.0.1:
   version "4.0.1"
   resolved "https://registry.npmjs.org/quick-lru/-/quick-lru-4.0.1.tgz#5b8878f113a58217848c6482026c73e1ba57727f"
@@ -14918,14 +14905,6 @@ string_decoder@~1.1.1:
   dependencies:
     safe-buffer "~5.1.0"
 
-stringify-object-es5@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.npmjs.org/stringify-object-es5/-/stringify-object-es5-2.5.0.tgz#057c3c9a90a127339bb9d1704a290bb7bd0a1ec5"
-  integrity sha1-BXw8mpChJzObudFwSikLt70KHsU=
-  dependencies:
-    is-plain-obj "^1.0.0"
-    is-regexp "^1.0.0"
-
 stringify-package@^1.0.0, stringify-package@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/stringify-package/-/stringify-package-1.0.1.tgz#e5aa3643e7f74d0f28628b72f3dad5cecfc3ba85"
@@ -15231,21 +15210,6 @@ terser@^5.3.0:
     source-map "~0.7.2"
     source-map-support "~0.5.19"
 
-testdouble-qunit@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/testdouble-qunit/-/testdouble-qunit-3.0.0.tgz#142e7fe32cbd3d3f442cd8539f236dea63db2fa8"
-  integrity sha512-zd2IKz5eELq4bZPDG0HYE6JTALGibUvrOy9OD05JiiE+4/UEFBDDG7P0tWjJfP5rk2Vm+gK9Do02a/xtvWe+jA==
-
-testdouble@^3.16.1:
-  version "3.16.1"
-  resolved "https://registry.npmjs.org/testdouble/-/testdouble-3.16.1.tgz#05e3405b79e81d5e37aec7157cccd52217c97e8b"
-  integrity sha512-diaNYjFfR8bdMhtwJ9c2KxHa7M8Al7YciU+kteutWIIendmCC61ZyqQBtprsFkb6Cd/rjBr2sEoUJ8bWIVHm6w==
-  dependencies:
-    lodash "^4.17.15"
-    quibble "^0.6.4"
-    stringify-object-es5 "^2.5.0"
-    theredoc "^1.0.0"
-
 testem@^3.2.0:
   version "3.2.0"
   resolved "https://registry.npmjs.org/testem/-/testem-3.2.0.tgz#9924481f6a3b23e350fa77bb251c64d801c4c9a7"
@@ -15300,11 +15264,6 @@ text-table@^0.2.0, text-table@~0.2.0:
   version "2.6.0"
   resolved "https://registry.npmjs.org/textextensions/-/textextensions-2.6.0.tgz#d7e4ab13fe54e32e08873be40d51b74229b00fc4"
   integrity sha512-49WtAWS+tcsy93dRt6P0P3AMD2m5PvXRhuEA0kaXos5ZLlujtYmpmFsB+QvWUSxE1ZsstmYXfQ7L40+EcQgpAQ==
-
-theredoc@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/theredoc/-/theredoc-1.0.0.tgz#bcace376af6feb1873efbdd0f91ed026570ff062"
-  integrity sha512-KU3SA3TjRRM932jpNfD3u4Ec3bSvedyo5ITPI7zgWYnKep7BwQQaxlhI9qbO+lKJoRnoAbEVfMcAHRuKVYikDA==
 
 through2-filter@^3.0.0:
   version "3.0.0"

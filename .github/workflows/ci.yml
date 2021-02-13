@@ -31,8 +31,8 @@ jobs:
 
     - run: yarn install --frozen-lockfile
 
-    - name: Test with ${{ matrix.node }}
-      run: yarn test
+    - name: Test with Node ${{ matrix.node }}
+      run: yarn ember test
 
   floating-dependencies:
     if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
@@ -54,7 +54,7 @@ jobs:
       - run: yarn install --no-lockfile
 
       - name: Test with Node ${{ matrix.node }}
-        run: yarn test
+        run: yarn ember test
 
   try-scenarios:
     if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"

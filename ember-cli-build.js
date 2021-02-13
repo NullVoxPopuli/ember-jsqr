@@ -14,5 +14,20 @@ module.exports = function (defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
+  // ember-try optionally adds the embroider dependencies
+  if ('@embroider/webpack' in app.dependencies()) {
+    return (
+      // eslint-disable-next-line node/no-missing-require
+      require('@embroider/compat')
+        // eslint-disable-next-line node/no-missing-require
+        .compatBuild(app, require('@embroider/webpack').Webpack, {
+          staticAddonTestSupportTrees: true,
+          staticAddonTrees: true,
+          staticHelpers: true,
+          staticComponents: true,
+        })
+    );
+  }
+
   return app.toTree();
 };

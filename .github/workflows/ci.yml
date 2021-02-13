@@ -59,7 +59,7 @@ jobs:
   try-scenarios:
     if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
     name: "Compatibility"
-    timeout-minutes: 5
+    timeout-minutes: 7
     runs-on: ubuntu-latest
     needs: tests
 

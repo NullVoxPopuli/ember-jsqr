@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/NullVoxPopuli/ember-jsqr/compare/v1.1.0...v1.2.0) (2021-02-13)
+
+
+### Features
+
+* setup and merge ember-cli-update blueprint ([6f985c7](https://github.com/NullVoxPopuli/ember-jsqr/commit/6f985c76ab108b572994ae2962ed4263e820c06b))
+
 # [1.1.0](https://github.com/NullVoxPopuli/ember-jsqr/compare/v1.0.6...v1.1.0) (2021-02-13)
 
 

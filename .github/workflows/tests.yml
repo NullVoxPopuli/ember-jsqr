@@ -34,7 +34,7 @@ jobs:
 
   tests_ember_compat:
     if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
-    name: Ember Compatability
+    name: Compatibility
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -45,6 +45,7 @@ jobs:
         - "ember-release"
         - "ember-beta"
         - "ember-canary"
+        - "embroider"
     steps:
     - uses: actions/checkout@v2
     - uses: volta-cli/action@v1

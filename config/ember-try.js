@@ -53,6 +53,17 @@ module.exports = async function () {
           },
         },
       },
+      {
+        name: 'embroider',
+        npm: {
+          devDependencies: {
+            'ember-source': await getChannelURL('release'),
+            '@embroider/core': '*',
+            '@embroider/webpack': '*',
+            '@embroider/compat': '*',
+          },
+        },
+      },
     ],
   };
 };

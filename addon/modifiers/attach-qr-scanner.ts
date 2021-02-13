@@ -22,7 +22,7 @@ const DEFAULT_COLOR = '#FF3B58';
 const KEY = 'ember-jsqr/-private/no-really-do-not-directly-access-this-service/scanner';
 
 export default class AttachQrScannerModifier extends Modifier<Args> {
-  @service(KEY) scanner!: ScannerService;
+  @service(KEY) declare scanner: ScannerService;
 
   declare video?: HTMLVideoElement;
   declare canvas?: CanvasRenderingContext2D | null;

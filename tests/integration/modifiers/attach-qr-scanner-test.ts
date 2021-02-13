@@ -2,7 +2,6 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
-import td from 'testdouble';
 
 import { scanQR } from 'ember-jsqr/test-support';
 
@@ -19,18 +18,19 @@ module('Integration | Modifier | attach-qr-scanner', function (hooks) {
   test('can be attached to a vanilla canvas', async function (assert) {
     let data = { foo: 1 };
     let expected = JSON.stringify(data);
+    let actual: string | undefined;
 
-    this.fakeCameraStream = {};
-    this.receivedData = td.func();
+    this.setProperties({
+      fakeStream: {},
+      receivedData: (data: string) => (actual = data),
+    });
 
     await render(hbs`
-      <canvas {{attach-qr-scanner this.fakeCameraStream onData=this.receivedData}}></canvas>
+      <canvas {{attach-qr-scanner this.fakeStream onData=this.receivedData}}></canvas>
     `);
-
-    assert.throws(() => td.verify(this.receivedData));
 
     scanQR(this.owner, data);
 
-    assert.verify(this.receivedData(expected));
+    assert.deepEqual(actual, expected);
   });
 });

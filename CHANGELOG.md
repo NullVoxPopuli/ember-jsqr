@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/NullVoxPopuli/ember-jsqr/compare/v1.0.6...v1.1.0) (2021-02-13)
+
+
+### Features
+
+* support embroider ([8652495](https://github.com/NullVoxPopuli/ember-jsqr/commit/8652495094d6bfa5b4d641265beee8344816a13d))
+
 ## [1.0.6](https://github.com/NullVoxPopuli/ember-jsqr/compare/v1.0.5...v1.0.6) (2021-02-12)
 
 

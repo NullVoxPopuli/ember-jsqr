@@ -2,7 +2,7 @@ import { module, test } from 'qunit';
 import { visit, currentURL, click } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 
-import { setupBrowserFakes } from 'ember-browser-services';
+import { setupBrowserFakes } from 'ember-browser-services/test-support';
 
 module('Acceptance | docs', function (hooks) {
   setupApplicationTest(hooks);
@@ -11,7 +11,7 @@ module('Acceptance | docs', function (hooks) {
     setupBrowserFakes(hooks, {
       navigator: {
         mediaDevices: {
-          getUserMedia: () => ({ getTracks: () => [] }),
+          getUserMedia: () => Promise.resolve({ getTracks: () => [] }),
         },
       },
     });
@@ -21,7 +21,15 @@ module('Acceptance | docs', function (hooks) {
 
       assert.equal(currentURL(), '/docs/single-camera');
 
-      await click('button');
+      let selector = '[data-test-single-camera-demo] button';
+
+      await click(selector);
+
+      assert.dom(selector).hasText('Stop Camera');
+
+      await click(selector);
+
+      assert.dom(selector).hasText('Start Camera');
     });
   });
 });

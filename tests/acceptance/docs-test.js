@@ -11,7 +11,7 @@ module('Acceptance | docs', function (hooks) {
     setupBrowserFakes(hooks, {
       navigator: {
         mediaDevices: {
-          getUserMedia: () => Promise.resolve({ getTracks: () => [] }),
+          getUserMedia: () => ({ getTracks: () => [] }),
         },
       },
     });

@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/NullVoxPopuli/ember-jsqr/compare/v1.2.3...v1.2.4) (2021-02-26)
+
+
+### Bug Fixes
+
+* **deps:** update framework dependencies to ^1.0.4 ([0738c20](https://github.com/NullVoxPopuli/ember-jsqr/commit/0738c204912c9baff3f8d1a6de12aed512074a88))
+
 ## [1.2.3](https://github.com/NullVoxPopuli/ember-jsqr/compare/v1.2.2...v1.2.3) (2021-02-26)
 
 

@@ -1,3 +1,10 @@
+## [1.2.9](https://github.com/NullVoxPopuli/ember-jsqr/compare/v1.2.8...v1.2.9) (2021-03-12)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-htmlbars to ^5.6.5 ([60a95d2](https://github.com/NullVoxPopuli/ember-jsqr/commit/60a95d22d8cf9a4b69a3f7eabfcde2480c5d32bf))
+
 ## [1.2.8](https://github.com/NullVoxPopuli/ember-jsqr/compare/v1.2.7...v1.2.8) (2021-03-07)
 
 

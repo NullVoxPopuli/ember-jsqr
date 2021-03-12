@@ -1,6 +1,6 @@
 {
   "name": "ember-jsqr",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "ember integration with jsQR - a very fast QR Code scanner",
   "keywords": [
     "ember-addon"

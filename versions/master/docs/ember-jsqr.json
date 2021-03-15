@@ -1,1 +1,1 @@
-{"jsonapi":{"version":"1.0"},"data":{"type":"project","id":"ember-jsqr","attributes":{"name":"ember-jsqr","version":"1.2.8","navigationIndex":[]},"relationships":{"modules":{"data":[]}}}}
+{"jsonapi":{"version":"1.0"},"data":{"type":"project","id":"ember-jsqr","attributes":{"name":"ember-jsqr","version":"1.2.9","navigationIndex":[]},"relationships":{"modules":{"data":[]}}}}

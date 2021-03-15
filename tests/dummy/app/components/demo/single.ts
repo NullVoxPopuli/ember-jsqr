@@ -2,8 +2,13 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
+import { inject as service } from '@ember/service';
+
+import type { NavigatorService } from 'ember-browser-services/types';
 
 export default class SingleDemo extends Component {
+  @service('browser/navigator') declare navigator: NavigatorService;
+
   @tracked cameraStream?: MediaStream;
   @tracked lastDetectedData?: string;
 
@@ -23,7 +28,7 @@ export default class SingleDemo extends Component {
 
   private async start() {
     let options = { video: { facingMode: 'environment' } };
-    let stream = await navigator.mediaDevices.getUserMedia(options);
+    let stream = await this.navigator.mediaDevices.getUserMedia(options);
 
     this.cameraStream = stream;
   }

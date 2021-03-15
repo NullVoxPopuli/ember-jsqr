@@ -6553,6 +6553,15 @@ ember-auto-import@^1.10.1, ember-auto-import@^1.2.19, ember-auto-import@^1.5.3, 
     walk-sync "^0.3.3"
     webpack "^4.43.0"
 
+ember-browser-services@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/ember-browser-services/-/ember-browser-services-1.0.1.tgz#19884684808714520dba057c2063b7d0ddf3dba8"
+  integrity sha512-QJaEErvuc8GCs07INX3vqk3XvdOCXop6H/wqx0gIYJq5XgbgrldKtO1XuBGoZHlsFiJURAqEz20IDZZRdBbrnA==
+  dependencies:
+    ember-cli-babel "^7.23.1"
+    ember-cli-htmlbars "^5.3.2"
+    ember-cli-typescript "^4.1.0"
+
 ember-classic-decorator@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/ember-classic-decorator/-/ember-classic-decorator-2.0.0.tgz#e781e0811a92524ad177b490f404f513794aee39"

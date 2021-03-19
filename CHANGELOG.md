@@ -1,3 +1,10 @@
+## [1.2.12](https://github.com/NullVoxPopuli/ember-jsqr/compare/v1.2.11...v1.2.12) (2021-03-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-babel to ^7.26.2 ([2b89a99](https://github.com/NullVoxPopuli/ember-jsqr/commit/2b89a99d99fbbbb4290a24f6663602539b749151))
+
 ## [1.2.11](https://github.com/NullVoxPopuli/ember-jsqr/compare/v1.2.10...v1.2.11) (2021-03-19)
 
 

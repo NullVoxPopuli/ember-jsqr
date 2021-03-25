@@ -1,3 +1,10 @@
+## [1.2.13](https://github.com/NullVoxPopuli/ember-jsqr/compare/v1.2.12...v1.2.13) (2021-03-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-auto-import to ^1.11.2 ([7c2b70a](https://github.com/NullVoxPopuli/ember-jsqr/commit/7c2b70aa79ce28fc2678cf7546cefd25fca843d8))
+
 ## [1.2.12](https://github.com/NullVoxPopuli/ember-jsqr/compare/v1.2.11...v1.2.12) (2021-03-19)
 
 

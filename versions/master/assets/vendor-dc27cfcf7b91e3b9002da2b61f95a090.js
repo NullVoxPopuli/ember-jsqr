@@ -5270,21 +5270,25 @@ function i(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0
 return new l(e)
 return new a(e)}
 let s
-function o(){return new r.default}class a{constructor(e,t){i(this,"name",void 0),i(this,"nextToken",void 0),i(this,"isRegistered",!1),i(this,"items",new Map),i(this,"completedOperationsForTokens",new WeakMap),i(this,"completedOperationsForPrimitives",new Map),this.name=e,this.nextToken=t||o}beginAsync(e=this.nextToken(),t){if(this._register(),this.items.has(e))throw new Error(`beginAsync called for ${e} but it is already pending.`)
+function o(){return new r.default}class a{constructor(e,t){i(this,"isRegistered",!1),i(this,"items",new Map),i(this,"completedOperationsForTokens",new WeakMap),i(this,"completedOperationsForPrimitives",new Map),this.name=e,this.nextToken=t||o}beginAsync(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:this.nextToken(),t=arguments.length>1?arguments[1]:void 0
+if(this._register(),this.items.has(e))throw new Error(`beginAsync called for ${e} but it is already pending.`)
 let r=new Error
 return this.items.set(e,{get stack(){return r.stack},label:t}),e}endAsync(e){if(!this.items.has(e)&&!this._getCompletedOperations(e).has(e))throw new Error("endAsync called with no preceding beginAsync call.")
 this.items.delete(e),this._getCompletedOperations(e).set(e,!0)}waitUntil(){return 0===this.items.size}debugInfo(){let e=[]
 return this.items.forEach((t=>{e.push(t)})),e}reset(){this.items.clear()}_register(){this.isRegistered||((0,n.register)(this),this.isRegistered=!0)}_getCompletedOperations(e){let t=typeof e
-return!("function"===t)&&!(null!==e&&"object"===t)?this.completedOperationsForPrimitives:this.completedOperationsForTokens}}class l{constructor(e){i(this,"name",void 0),this.name=e}beginAsync(){return this}endAsync(){}waitUntil(){return!0}debugInfo(){return[]}reset(){}}})),define("@ember/test-waiters/index",["exports","@ember/test-waiters/waiter-manager","@ember/test-waiters/build-waiter","@ember/test-waiters/wait-for-promise","@ember/test-waiters/wait-for"],(function(e,t,r,n,i){"use strict"
+return!("function"===t)&&!(null!==e&&"object"===t)?this.completedOperationsForPrimitives:this.completedOperationsForTokens}}class l{constructor(e){this.name=e}beginAsync(){return this}endAsync(){}waitUntil(){return!0}debugInfo(){return[]}reset(){}}})),define("@ember/test-waiters/index",["exports","@ember/test-waiters/waiter-manager","@ember/test-waiters/build-waiter","@ember/test-waiters/wait-for-promise","@ember/test-waiters/wait-for"],(function(e,t,r,n,i){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),Object.defineProperty(e,"register",{enumerable:!0,get:function(){return t.register}}),Object.defineProperty(e,"unregister",{enumerable:!0,get:function(){return t.unregister}}),Object.defineProperty(e,"getWaiters",{enumerable:!0,get:function(){return t.getWaiters}}),Object.defineProperty(e,"_reset",{enumerable:!0,get:function(){return t._reset}}),Object.defineProperty(e,"getPendingWaiterState",{enumerable:!0,get:function(){return t.getPendingWaiterState}}),Object.defineProperty(e,"hasPendingWaiters",{enumerable:!0,get:function(){return t.hasPendingWaiters}}),Object.defineProperty(e,"buildWaiter",{enumerable:!0,get:function(){return r.default}}),Object.defineProperty(e,"_resetWaiterNames",{enumerable:!0,get:function(){return r._resetWaiterNames}}),Object.defineProperty(e,"waitForPromise",{enumerable:!0,get:function(){return n.default}}),Object.defineProperty(e,"waitFor",{enumerable:!0,get:function(){return i.default}})})),define("@ember/test-waiters/token",["exports"],(function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-e.default=class{}})),define("@ember/test-waiters/types/index",[],(function(){})),define("@ember/test-waiters/wait-for-promise",["exports","@ember/test-waiters/build-waiter"],(function(e,t){"use strict"
+e.default=class{}})),define("@ember/test-waiters/types/index",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})})),define("@ember/test-waiters/wait-for-promise",["exports","@ember/test-waiters/build-waiter"],(function(e,t){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=function(e,t){let r=e
 0
 return r};(0,t.default)("@ember/test-waiters:promise-waiter")})),define("@ember/test-waiters/wait-for",["exports","@ember/test-waiters/wait-for-promise","@ember/test-waiters/build-waiter"],(function(e,t,r){"use strict"
-function n(e,t){return e}Object.defineProperty(e,"__esModule",{value:!0}),e.default=function(...e){if(e.length<3){let[t,r]=e
-return n(t,r)}{let[,,t,r]=e
-return t}};(0,r.default)("@ember/test-waiters:generator-waiter")})),define("@ember/test-waiters/waiter-manager",["exports","ember","@ember/test"],(function(e,t,r){"use strict"
+function n(e,t){return e}Object.defineProperty(e,"__esModule",{value:!0}),e.default=function(){for(var e=arguments.length,t=new Array(e),r=0;r<e;r++)t[r]=arguments[r]
+let i=t.length<3
+if(i){let[e,r]=t
+return n(e,r)}{let[,,e,r]=t
+return e}};(0,r.default)("@ember/test-waiters:generator-waiter")})),define("@ember/test-waiters/waiter-manager",["exports","ember","@ember/test"],(function(e,t,r){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.register=function(e){n.set(e.name,e)},e.unregister=function(e){n.delete(e.name)},e.getWaiters=i,e._reset=function(){for(let e of i())e.isRegistered=!1
 n.clear()},e.getPendingWaiterState=s,e.hasPendingWaiters=o
 const n=new Map

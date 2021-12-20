@@ -1,3 +1,26 @@
+# [2.0.0](https://github.com/NullVoxPopuli/ember-jsqr/compare/v1.2.14...v2.0.0) (2021-12-20)
+
+
+### Bug Fixes
+
+* **deps:** update cli dependencies ([2aa7e83](https://github.com/NullVoxPopuli/ember-jsqr/commit/2aa7e836c99566cdd805f8970342cec027bdcdae))
+* **deps:** update dependency ember-cli-babel to ^7.26.10 ([7c49699](https://github.com/NullVoxPopuli/ember-jsqr/commit/7c4969922f33c7fedfb00ad85e76253f9a93c1fe))
+* **deps:** update dependency ember-cli-htmlbars to ^5.7.2 ([dcc3837](https://github.com/NullVoxPopuli/ember-jsqr/commit/dcc3837a1a8838b7359ab798e663260e43049a2d))
+* **deps:** update dependency ember-cli-typescript to ^4.2.1 ([e750147](https://github.com/NullVoxPopuli/ember-jsqr/commit/e750147025b4de1f58a34d83747af394a88a0f77))
+* **deps:** update dependency ember-modifier to ^2.1.2 ([822d880](https://github.com/NullVoxPopuli/ember-jsqr/commit/822d880f3ee47bd7644669fb997209a13157d4d2))
+* **deps:** update dependency jsqr to ^1.4.0 ([4edd40a](https://github.com/NullVoxPopuli/ember-jsqr/commit/4edd40aa915ab3cc6411e3678ce4714c38a65268))
+
+
+### Features
+
+* update support ([9bdbd8c](https://github.com/NullVoxPopuli/ember-jsqr/commit/9bdbd8c34a7112bb3c3a820db8dbb7f8f057d37c))
+
+
+### BREAKING CHANGES
+
+* drop support for node 12, Ember 3.20, require
+ember-auto-import@v2
+
 ## [1.2.14](https://github.com/NullVoxPopuli/ember-jsqr/compare/v1.2.13...v1.2.14) (2021-03-26)
 
 

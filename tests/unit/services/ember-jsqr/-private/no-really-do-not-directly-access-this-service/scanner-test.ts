@@ -11,6 +11,7 @@ module(
       let service = this.owner.lookup(
         'service:ember-jsqr/-private/no-really-do-not-directly-access-this-service/scanner'
       );
+
       assert.ok(service);
     });
   }

@@ -1,5 +1,5 @@
-type Point = import('jsqr/dist/locator').Point;
-type QRCode = import('jsqr').QRCode;
+import type { QRCode } from 'jsqr';
+import type { Point } from 'jsqr/dist/locator';
 
 export function drawBox({
   canvas,

@@ -1,12 +1,11 @@
-import { module, test } from 'qunit';
-import { setupRenderingTest } from 'ember-qunit';
 import { render, settled } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
 
-import { scanQR } from 'ember-jsqr/test-support';
-
-import RSVP from 'rsvp';
 import ScannerService from 'ember-jsqr/services/ember-jsqr/-private/no-really-do-not-directly-access-this-service/scanner';
+import { scanQR } from 'ember-jsqr/test-support';
+import RSVP from 'rsvp';
 
 module('Component | jsqr-scanner', function (hooks) {
   setupRenderingTest(hooks);
@@ -20,7 +19,7 @@ module('Component | jsqr-scanner', function (hooks) {
     this.setProperties({
       fakeStream: {},
       receivedData: (qrCode: string) => {
-        assert.equal(qrCode, expected);
+        assert.strictEqual(qrCode, expected);
       },
     });
 
@@ -71,6 +70,7 @@ module('Component | jsqr-scanner', function (hooks) {
       // but I don't want people importing this as some sort of way to access
       // the private bits of this addon.
       const key = 'ember-jsqr/-private/no-really-do-not-directly-access-this-service/scanner';
+
       this.owner.register(
         `service:${key}`,
         class extends ScannerService {

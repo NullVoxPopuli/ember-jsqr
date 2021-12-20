@@ -1,9 +1,9 @@
+import { render } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
-import hbs from 'htmlbars-inline-precompile';
 
 import { scanQR } from 'ember-jsqr/test-support';
+import hbs from 'htmlbars-inline-precompile';
 
 module('Integration | Modifier | attach-qr-scanner', function (hooks) {
   setupRenderingTest(hooks);

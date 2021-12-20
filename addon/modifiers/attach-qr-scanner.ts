@@ -1,13 +1,13 @@
 import Ember from 'ember';
-import Modifier from 'ember-modifier';
 import { inject as service } from '@ember/service';
 
-type JSQR = typeof import('jsqr').default;
-type QRCode = import('jsqr').QRCode;
+import Modifier from 'ember-modifier';
 
 import { drawBox } from './graphics/box';
 
-import ScannerService from 'ember-jsqr/services/ember-jsqr/-private/no-really-do-not-directly-access-this-service/scanner';
+import type ScannerService from 'ember-jsqr/services/ember-jsqr/-private/no-really-do-not-directly-access-this-service/scanner';
+import type JSQR from 'jsqr';
+import type { QRCode } from 'jsqr';
 
 type Args = {
   positional: [MediaStream];
@@ -94,12 +94,15 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
         canvas: this.canvas,
         element: this.element,
         scanner: this.scanner,
-        onScan: (code) =>
+        onScan: (code) => {
+          if (!this.canvas) return;
+
           drawBox({
-            canvas: this.canvas!, // TS, huh?
+            canvas: this.canvas,
             location: code.location,
             color: this.color,
-          }),
+          });
+        },
       });
     }
 
@@ -109,7 +112,7 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
 
 type ScanArgs = {
   canvas: CanvasRenderingContext2D;
-  jsQR: JSQR;
+  jsQR: typeof JSQR;
   element: HTMLCanvasElement;
   scanner: ScannerService;
   onScan: (code: QRCode) => void;

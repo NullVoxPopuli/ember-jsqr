@@ -21,8 +21,8 @@ jobs:
     strategy:
       matrix:
         node:
-        - "12"
         - "14"
+        - "16"
     steps:
     - uses: actions/checkout@v2
     - uses: volta-cli/action@v1
@@ -42,8 +42,8 @@ jobs:
     strategy:
       matrix:
         node:
-        - "12"
         - "14"
+        - "16"
 
     steps:
       - uses: actions/checkout@v2
@@ -67,38 +67,22 @@ jobs:
       fail-fast: true
       matrix:
         ember-try-scenario:
-          - ember-lts-3.16
-          - ember-lts-3.20
           - ember-lts-3.24
+          - ember-lts-3.28
           - ember-release
           - ember-beta
           - ember-canary
-          - embroider
+          - embroider-safe
+          - embroider-optimized
     steps:
       - uses: actions/checkout@v2
       - uses: volta-cli/action@v1
         with:
-          node-version: 12.x
+          node-version: 14.x
       - name: install dependencies
         run: yarn install --frozen-lockfile
       - name: test
         run: node_modules/.bin/ember try:one ${{ matrix.ember-try-scenario }} --skip-cleanup
-
-  ember-cli-update:
-    if: github.event_name == 'pull_request' && github.event.pusher.name == 'renovate-bot'
-    runs-on: ubuntu-latest
-    needs: [tests, try-scenarios, floating-dependencies]
-
-    steps:
-    - uses: actions/checkout@v2
-      with:
-        ref: ${{ github.head_ref }}
-        token: ${{ secrets.GitHubToken }}
-    - uses: actions/setup-node@v2
-    - uses: kellyselden/ember-cli-update-action@v3
-      with:
-        autofix_command: yarn lint:fix
-        ignore_to: true
 
   publish:
     name: Release

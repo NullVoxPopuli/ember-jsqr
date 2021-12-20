@@ -1,7 +1,7 @@
-import Service from '@ember/service';
 import { assert } from '@ember/debug';
+import Service from '@ember/service';
 
-type JSQR = typeof import('jsqr').default;
+import type JSQR from 'jsqr';
 
 interface ScannerOptions {
   onData: <T>(data: string) => T;
@@ -46,7 +46,7 @@ export default class ScannerService extends Service {
    * @desc
    * the jsQR module.
    */
-  jsQR?: JSQR;
+  jsQR?: typeof JSQR;
 
   /**
    * @desc

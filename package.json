@@ -48,7 +48,7 @@
     "ember-cli-babel": "^7.26.11",
     "ember-cli-htmlbars": "^6.0.1",
     "ember-cli-typescript": "^4.2.1",
-    "ember-modifier": "^3.0.0",
+    "ember-modifier": "^3.1.0",
     "jsqr": "^1.4.0"
   },
   "devDependencies": {

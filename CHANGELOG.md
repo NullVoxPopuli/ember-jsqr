@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/NullVoxPopuli/ember-jsqr/compare/v2.0.4...v2.0.5) (2022-02-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-typescript to v5 ([35db81f](https://github.com/NullVoxPopuli/ember-jsqr/commit/35db81f141c5c7559c28c959c640da8676e0cf51))
+
 ## [2.0.4](https://github.com/NullVoxPopuli/ember-jsqr/compare/v2.0.3...v2.0.4) (2022-01-25)
 
 

@@ -9,6 +9,13 @@ which by itself, does not interact with the web camera APIs (getUserMedia).
 
 View the [Documentation](https://nullvoxpopuli.github.io/ember-jsqr/)
 
+Compatibility
+------------------------------------------------------------------------------
+
+* Ember.js v3.20 or above
+* Ember CLI v3.20 or above
+* Node.js v12 or above
+
 
 Installation
 ------------------------------------------------------------------------------

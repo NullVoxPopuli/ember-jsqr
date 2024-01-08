@@ -20,8 +20,11 @@ interface Named {
 type Positional = [MediaStream];
 
 export interface AttachQrScannerModifierSignature {
-  positional: Positional;
-  named: Named;
+  Element: HTMLCanvasElement;
+  Args: {
+    Positional: Positional;
+    Named: Named;
+  };
 }
 
 const DEFAULT_COLOR = '#FF3B58';
@@ -95,7 +98,6 @@ export default class AttachQrScannerModifier extends Modifier<AttachQrScannerMod
   tick() {
     if (!this.scanner.jsQR) return;
     if (!this.video || !this.canvas) return;
-    if (this.isDestroyed || this.isDestroying) return;
 
     if (this.video.readyState === this.video.HAVE_ENOUGH_DATA) {
       this.element.height = this.video.videoHeight;

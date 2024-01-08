@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import { registerDestructor } from '@ember/destroyable';
 import { inject as service } from '@ember/service';
 
 import Modifier from 'ember-modifier';
@@ -9,49 +10,60 @@ import type ScannerService from 'ember-jsqr/services/ember-jsqr/-private/no-real
 import type JSQR from 'jsqr';
 import type { QRCode } from 'jsqr';
 
-type Args = {
-  positional: [MediaStream];
-  named: {
-    onData: <T>(data: string) => T;
-    onReady: <T>() => T;
-    highlightColor?: string;
-  };
-};
+interface Named {
+  [key: string]: unknown;
+  onData: <T>(data: string) => T;
+  onReady: <T>() => T;
+  highlightColor?: string;
+}
+
+type Positional = [MediaStream];
+
+export interface AttachQrScannerModifierSignature {
+  positional: Positional;
+  named: Named;
+}
 
 const DEFAULT_COLOR = '#FF3B58';
 const KEY = 'ember-jsqr/-private/no-really-do-not-directly-access-this-service/scanner';
 
-export default class AttachQrScannerModifier extends Modifier<Args> {
+export default class AttachQrScannerModifier extends Modifier<AttachQrScannerModifierSignature> {
   @service(KEY) declare scanner: ScannerService;
 
   declare video?: HTMLVideoElement;
   declare canvas?: CanvasRenderingContext2D | null;
   declare element: HTMLCanvasElement;
+  declare named: Named;
+  declare positional: Positional;
 
   _tick: FrameRequestCallback = () => ({});
 
   get videoStream() {
-    return this.args.positional[0];
+    return this.positional?.[0];
   }
 
   get onData() {
-    return this.args?.named.onData;
+    return this.named?.onData;
   }
 
   get onReady() {
-    return this.args?.named.onReady;
+    return this.named?.onReady;
   }
 
   get color() {
-    return this.args?.named.highlightColor || DEFAULT_COLOR;
+    return this.named?.highlightColor || DEFAULT_COLOR;
   }
 
-  didInstall() {
-    this.canvas = this.element.getContext('2d');
-  }
+  modify(element: HTMLCanvasElement, positional: Positional, named: Named): void {
+    if (!this.element) {
+      this.element = element;
+      this.canvas = this.element.getContext('2d');
+    }
 
-  didReceiveArguments() {
-    if (this.videoStream) {
+    this.named = named;
+    this.positional = positional;
+
+    if (this.videoStream && !this.video) {
       this.video = document.createElement('video');
 
       if (!Ember?.testing) {
@@ -62,6 +74,8 @@ export default class AttachQrScannerModifier extends Modifier<Args> {
 
       this.startScanning();
     }
+
+    registerDestructor(this, () => this.willRemove());
   }
 
   willRemove() {

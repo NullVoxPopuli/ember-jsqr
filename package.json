@@ -111,7 +111,7 @@
   },
   "homepage": "https://NullVoxPopuli.github.io/ember-jsqr",
   "volta": {
-    "node": "16.13.2",
+    "node": "20.18.0",
     "yarn": "1.22.17"
   }
 }

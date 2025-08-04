@@ -9,9 +9,14 @@ which by itself, does not interact with the web camera APIs (getUserMedia).
 
 View the [Documentation](https://nullvoxpopuli.github.io/ember-jsqr/)
 
+## Compatibility
 
-Installation
-------------------------------------------------------------------------------
+* Ember.js v3.28 or above
+* Ember CLI v3.28 or above
+* Node.js v14 or above
+
+
+## Installation
 
 ```
 ember install ember-jsqr
@@ -24,7 +29,6 @@ Contributing
 See the [Contributing](CONTRIBUTING.md) guide for details.
 
 
-License
-------------------------------------------------------------------------------
+## License
 
 This project is licensed under the [MIT License](LICENSE.md).
